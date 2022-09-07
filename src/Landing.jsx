@@ -9,6 +9,9 @@ import playgame from './imgs/play-game.svg';
 import disfactory_callout from './imgs/disfactory-callout.svg';
 import forehead_bg1 from './imgs/forehead-bg1.svg';
 import forehead_bg2 from './imgs/forehead-bg2.svg';
+import action1 from './imgs/action1.svg';
+import action2 from './imgs/action2.svg';
+import action3 from './imgs/action3.svg';
 
 function Landing() {
 
@@ -41,7 +44,7 @@ return (
 
                 {/* FIXME: 目前這三個還沒處理好 */}
                 <li onClick={()=>{
-                  const k = document.querySelector('.how-to-use');
+                  const k = document.querySelector('.action-change');
                   k.scrollIntoView({behavior: "smooth" , block: "start", inline: "start"});
                 }}>目前成果</li>
                 <li onClick={()=>{
@@ -189,6 +192,46 @@ return (
       <h2>你的資料如何被運用？</h2>
       <p>您在系統上的每個微小行動，  <br/>
           都將成為維護農地環境的有利證據！</p>
+    </div>
+
+    {/* 小小行動，大大改變 */}
+    <div className='action-change'>
+      <h2>小小行動，大大改變</h2>
+      <p>這幾年我們不斷使用工具，  <br/>
+          讓違章工廠無所遁形！</p>
+
+      {/* 行動3 steps */}
+      <div className='action-wrap'>
+          <div>
+            <img src={action1} alt=""></img>
+            <p>513</p>
+            <p>累積回報人次</p>
+          </div>
+          <div>
+            <img src={action2} alt=""></img>
+            <p>9999</p>
+            <p>累積申訴公文</p>
+          </div>
+          <div>
+            <img src={action3} alt=""></img>
+            <p>888</p>
+            <p>間被裁罰工廠</p>
+          </div>
+
+
+
+      </div>
+
+      <p className='action-change-note'>
+      資料來源｜總工廠數：農委會農業及農地資源盤查結果；檢舉數、參與人次：本回報系統
+      </p>
+    </div>
+
+    {/* 我們是誰？ */}
+    <div className='who-we-are'>
+      <h2>我們是誰？</h2>
+      <p>既然你誠心誠意的發問了  <br/>
+          我們就大發慈悲的告訴你</p>
     </div>
 
 
