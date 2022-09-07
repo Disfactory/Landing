@@ -7,6 +7,8 @@ import hamburger from './imgs/hamburger.svg';
 import pollutone from './imgs/pollutone.svg';
 import playgame from './imgs/play-game.svg';
 import disfactory_callout from './imgs/disfactory-callout.svg';
+import forehead_bg1 from './imgs/forehead-bg1.svg';
+import forehead_bg2 from './imgs/forehead-bg2.svg';
 
 function Landing() {
 
@@ -28,11 +30,28 @@ return (
           {/* Nav清單 */}
           <div className='nav-list'>
             <ul>
-                <li>你知道嗎？</li>
-                <li>回報系統</li>
-                <li>目前成果</li>
-                <li>常見問題</li>
-                <li>新聞報導</li>
+                <li onClick={()=>{
+                  const k = document.querySelector('.do-u-know');
+                  k.scrollIntoView({behavior: "smooth"});
+                }}>你知道嗎？</li>
+                <li onClick={()=>{
+                  const k = document.querySelector('.disfactory-tools');
+                  k.scrollIntoView({behavior: "smooth"});
+                }}>回報系統</li>
+
+                {/* FIXME: 目前這三個還沒處理好 */}
+                <li onClick={()=>{
+                  const k = document.querySelector('.how-to-use');
+                  k.scrollIntoView({behavior: "smooth" , block: "start", inline: "start"});
+                }}>目前成果</li>
+                <li onClick={()=>{
+                  const k = document.querySelector('.do-u-know');
+                  k.scrollIntoView({behavior: "smooth"});
+                }}>常見問題</li>
+                <li onClick={()=>{
+                  const k = document.querySelector('.do-u-know');
+                  k.scrollIntoView({behavior: "smooth"});
+                }}>新聞報導</li>
             </ul>
 
             <a href="https://bit.ly/3kESSsQ">拍照回報</a>
@@ -52,6 +71,25 @@ return (
 
 
       
+    </div>
+
+    <div className='forehead-container'>
+    
+    {/* BG */}
+    <img src={forehead_bg1} alt=""/>
+    <img src={forehead_bg2} alt=""/>
+
+        {/* 內文模式 */}
+        <div>
+          <h2>農地違章工廠回報系統</h2> 
+          <p>用科技工具改變政府</p>
+
+          <div className='forehead-btn-wrap'>
+                <a href="https://bit.ly/3kESSsQ">拍照回報</a>
+                <a href="https://bit.ly/3vFXXaj">鍵盤參與</a>
+          </div>
+        </div>
+
     </div>
 
     
@@ -95,9 +133,18 @@ return (
                   且程序往往複雜。<br/>
                   違章工廠檢舉系統協助你快速、匿名檢舉，還不用擔心被找碴！</p>
                   
-                  <div className='num'>1</div>
-                  <div className='num'>2</div>
-                  <div className='num'>3</div>
+                  <div className='callout-tips'>
+                    <div className='num'>1</div>
+                    <p>拍照</p>
+                  </div>
+                  <div className='callout-tips'>
+                    <div className='num'>2</div>
+                    <p>標記地點+上傳</p>
+                  </div>
+                  <div className='callout-tips'>
+                    <div className='num'>3</div>
+                    <p>地球公民基金會幫你匿名檢舉</p>
+                  </div>
 
                   <a>新增可疑工廠</a>
 
@@ -108,11 +155,23 @@ return (
                   <h2 className='tool-h2-2'>大家來找廠</h2>
                   <img src={playgame} alt=""/>
                   <p>住在都市也想幫忙？ <br/>
-                  一起用遊戲改變世界！進入「大家來找廠」一起用空拍圖辨識</p>
+                  一起用遊戲改變世界！進入「大家來找廠」<br/>
+                  一起用空拍圖辨識</p>
 
-                  <div className='num'>1</div>
-                  <div className='num'>2</div>
-                  <div className='num'>3</div>
+                  <div className='findout-tips'>
+                    <div className='num'>1</div>
+                    <p>比對判斷空拍圖</p>
+                  </div>
+                  <div className='findout-tips'>
+                    <div className='num'>2</div>
+                    <p>送出！</p>
+                  </div>
+                  <div className='findout-tips'>
+                    <div className='num'>3</div>
+                    <p>地球公民基金會批次檢舉</p>
+                  </div>
+
+              
                 
                   <a>馬上鍵盤參與</a>
                 </div>
