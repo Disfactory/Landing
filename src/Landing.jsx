@@ -18,19 +18,15 @@ function Landing() {
 return (
   <>
       
-    {/* 上方fix navbar */}
     <div className="navbar">
 
       <div className='nav-container'>
 
-          {/* TODO: 為什麼img沒辦法下載？是被什麼擋下來了嗎？ */}
-          {/* 左方LOGO */}
           <div className='nav-logo'>
               <img src={logo} alt="" />
               <h1>農地違章工廠</h1>
           </div>
 
-          {/* Nav清單 */}
           <div className='nav-list'>
             <ul>
                 <li onClick={()=>{
@@ -42,7 +38,7 @@ return (
                   k.scrollIntoView({behavior: "smooth"});
                 }}>回報系統</li>
 
-                {/* FIXME: 目前這三個還沒處理好 */}
+                {/* FIXME: scroll-down-link */}
                 <li onClick={()=>{
                   const k = document.querySelector('.action-change');
                   k.scrollIntoView({behavior: "smooth" , block: "start", inline: "start"});
@@ -61,7 +57,6 @@ return (
             <a href="https://bit.ly/3vFXXaj">鍵盤參與</a>
           </div>
 
-          {/* hambergur */}
           <div className='nav-hamburger'>
             <img alt="" src={hamburger}/>
           </div>
@@ -75,11 +70,10 @@ return (
 
     <div className='forehead'>
     
-    {/* BG */}
     <img src={forehead_bg1} alt="" className='forehead_bg_left'/>
     <img src={forehead_bg2} alt="" className='forehead_bg_right'/> 
 
-        {/* 內文模式 */}
+
         <div className='forehead-content'>
           <h2 className='main-title'>農地違章工廠回報系統</h2> 
           <p className='subtitle'>用科技工具改變政府</p>
@@ -93,7 +87,6 @@ return (
     </div>
 
     
-    {/* 你知道嗎？ */}
     <div className='do-you-know'>
 
         <div className='do-you-know-title'>
@@ -120,7 +113,7 @@ return (
 
     </div>
 
-    {/* 於是，我們製作了這些工具！ */}
+
     <div className='disfactory-tools'>
 
           <h2 className='main-title'>於是，我們製作了這些工具！</h2>
@@ -186,20 +179,18 @@ return (
     </div>
 
 
-    {/* 你的資料如何被運用？ */}
     <div className='how-to-use'>
       <h2 className='main-title'>你的資料如何被運用？</h2>
       <p className='subtitle'>您在系統上的每個微小行動，  <br/>
           都將成為維護農地環境的有利證據！</p>
     </div>
 
-    {/* 小小行動，大大改變 */}
     <div className='action-change'>
       <h2 className='main-title'>小小行動，大大改變</h2>
       <p className='subtitle'>這幾年我們不斷使用工具，  <br/>
           讓違章工廠無所遁形！</p>
 
-      {/* 行動3 steps */}
+
       <div className='action-wrap'>
           <div>
             <img src={action1} alt=""></img>
@@ -224,7 +215,6 @@ return (
       </p>
     </div>
 
-    {/* 我們是誰？ */}
     <div className='who-we-are'>
       <h2 className='main-title'>我們是誰？</h2>
       <p className='subtitle'>既然你誠心誠意的發問了  <br/>
@@ -239,4 +229,4 @@ return (
 }
 
 
-export default Landing 
+export default Landing;
