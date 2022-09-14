@@ -4,7 +4,7 @@ import './landing.scss';
 // SVG
 import logo from './imgs/logo-and-exclam.png';
 import hamburger from './imgs/hamburger.svg';
-import pollutone from './imgs/pollutone.svg';
+// import pollutone from './imgs/pollutone.svg';
 import playgame from './imgs/play-game.svg';
 import disfactory_callout from './imgs/disfactory-callout.svg';
 import forehead_bg1 from './imgs/forehead-bg1.svg';
