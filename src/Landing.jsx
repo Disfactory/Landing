@@ -232,6 +232,13 @@ return (
           我們就大發慈悲的告訴你</p>
     </div>
 
+    <div className='QA'>
+      <h2 className='main-title'>常見問題</h2>
+      <p className='subtitle'>既然你誠心誠意的發問了  <br/>
+          我們就大發慈悲的告訴你</p>
+      
+    </div>
+
 
 
   </>
