@@ -13,6 +13,9 @@ import action1 from './imgs/action1.svg';
 import action2 from './imgs/action2.svg';
 import action3 from './imgs/action3.svg';
 
+//Component
+import Scratchcard from './ScratchOff';
+
 function Landing() {
 
 return (
@@ -27,11 +30,10 @@ return (
               <h1>農地違章工廠</h1>
           </div>
 
-
           <div className='nav-list'>
             <ul>
                 <li onClick={()=>{
-                  const k = document.querySelector('.do-u-know');
+                  const k = document.querySelector('.do-you-know');
                   k.scrollIntoView({behavior: "smooth"});
                 }}>你知道嗎？</li>
                 <li onClick={()=>{
@@ -39,17 +41,17 @@ return (
                   k.scrollIntoView({behavior: "smooth"});
                 }}>回報系統</li>
 
-                {/* FIXME: scroll-link */}
+                {/* FIXME: srcoll-link  */}
                 <li onClick={()=>{
-                  const k = document.querySelector('.action-change');
+                  const k = document.querySelector('.what-we-do');
                   k.scrollIntoView({behavior: "smooth" , block: "start", inline: "start"});
                 }}>目前成果</li>
                 <li onClick={()=>{
-                  const k = document.querySelector('.do-u-know');
+                  const k = document.querySelector('.what-we-do');
                   k.scrollIntoView({behavior: "smooth"});
                 }}>常見問題</li>
                 <li onClick={()=>{
-                  const k = document.querySelector('.do-u-know');
+                  const k = document.querySelector('.do-you-know');
                   k.scrollIntoView({behavior: "smooth"});
                 }}>新聞報導</li>
             </ul>
@@ -112,6 +114,7 @@ return (
           </div>
 
     </div>
+
 
     <div className='disfactory-tools'>
 
@@ -184,12 +187,10 @@ return (
           都將成為維護農地環境的有利證據！</p>
     </div>
 
-
     <div className='action-change'>
       <h2 className='main-title'>小小行動，大大改變</h2>
       <p className='subtitle'>這幾年我們不斷使用工具，  <br/>
           讓違章工廠無所遁形！</p>
-
 
       <div className='action-wrap'>
           <div>
@@ -215,12 +216,22 @@ return (
       </p>
     </div>
 
-
     <div className='who-we-are'>
       <h2 className='main-title'>我們是誰？</h2>
       <p className='subtitle'>既然你誠心誠意的發問了  <br/>
           我們就大發慈悲的告訴你</p>
     </div>
+
+    <div className='scratch-off'>
+      <Scratchcard/>
+    </div>
+
+    <div className='what-we-do'>
+      <h2 className='main-title'>目前成果</h2>
+      <p className='subtitle'>既然你誠心誠意的發問了  <br/>
+          我們就大發慈悲的告訴你</p>
+    </div>
+
 
 
   </>
@@ -230,4 +241,4 @@ return (
 }
 
 
-export default Landing;
+export default Landing; 
