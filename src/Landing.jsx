@@ -12,6 +12,7 @@ import action1 from './imgs/action1.svg';
 import action2 from './imgs/action2.svg';
 import action3 from './imgs/action3.svg';
 import scratch_notion from './imgs/scratch_notion.svg';
+import do_you_know_bg from './imgs/do_you_know_bg.svg';
 
 //Component
 import Scratchcard from './ScratchOff';
@@ -93,6 +94,7 @@ return (
     <div className='do-you-know'>
 
         <div className='do-you-know-title'>
+          <img src={do_you_know_bg} alt="" ></img>
           <h2 className='main-title'>你知道嗎？</h2>
           <p className='subtitle'>台灣沒被污染的農地很稀少， <br/>
           但沒日本製造的壓縮機少。</p>
