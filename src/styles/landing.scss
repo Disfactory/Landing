@@ -249,6 +249,14 @@ hr{
 .do-you-know{
   padding: 40px 24px;
 
+      .do-you-know-title{
+
+        img{
+          display: none;
+        }
+
+      }
+
       .subtitle{
         margin-bottom: 36px;
       }
@@ -562,14 +570,29 @@ hr{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 170px 80px;
+  height: 788px;
+  padding: 200px 200px 80px;
+  position: relative;
 
     .do-you-know-title{
       width: 50%;
+      
+      h2,p {
+        text-align: left;
+      }
+
+      img{
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        z-index: -1;
+      }
+
     }
 
     .do-you-know-content{
-      width: 50%;
+      width: 40%;
     }
 }
 
