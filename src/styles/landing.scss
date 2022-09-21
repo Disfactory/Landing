@@ -32,6 +32,14 @@
   color: #333333;
 }
 
+hr{
+  size: 0.5px;
+  width: 80%;
+  // color: #D9E0A2;
+  border: 0.5px solid #d9e0a269;
+  max-width: 800px;
+}
+
 .tools-subtitle{
     font-family: 'Noto Sans CJK TC';
     font-style: normal;
@@ -378,16 +386,32 @@
   }
 }
 
+.who-we-are{
+  padding: 60px;
+}
+
 .scratch-off{
   width: 100%;
-  padding: 40px 24px;
+  padding-bottom: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+    .scratch-notion{
+      margin-left: 30px;
+    }
+
+    .scratchcard:hover{
+      cursor: pointer;
+    }
 }
 
 .what-we-do{
   padding: 40px 24px;
+
+  .subtitle{
+    margin-bottom: 60px;
+  }
 }
 
 .QA{
@@ -396,10 +420,6 @@
 
 
 
-
-
-
-// 桌面版
 @media screen and (min-width: 992px) {
 
 
@@ -447,12 +467,6 @@
               position: relative; 
             }
 
-            // li:hover{
-            //   cursor: pointer;
-            //   transition: transform 0.25s ease-out;
-            //   transform-origin: bottom right;
-            //   border-bottom: 1px solid black;
-            // }
 
             li:hover{
               cursor: pointer;
@@ -597,7 +611,7 @@
 }
 
 .action-change{
-  padding: 60px 170px 80px;
+  padding: 60px 170px 20px;
 
   .subtitle{
     margin-bottom: 75px;
