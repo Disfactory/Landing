@@ -131,7 +131,10 @@ hr{
 
 
 .navbar{
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
   width: 100%;
   background-color: #fff;
   box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
@@ -188,6 +191,7 @@ hr{
   justify-content: center;
   position: relative;
   background: #E5F3F3;
+  margin-top: 60px;
 
   img{
     position: absolute;
