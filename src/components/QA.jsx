@@ -1,6 +1,6 @@
 import React from "react";
-import './styles/QA.scss';
-import qa_plus from './imgs/qa_plus.svg';
+import '../styles/QA.scss';
+import qa_plus from '../imgs/qa_plus.svg';
 
 
 function QA () {

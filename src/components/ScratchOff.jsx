@@ -1,9 +1,9 @@
 import React from "react";
 import ScratchCard from "react-scratchcard";
 
-import cardImage from "./imgs/scratch_front.svg";
-import cardImage2 from "./imgs/scratch_back.svg";
-import './styles/scratch.css';
+import cardImage from "../imgs/scratch_front.svg";
+import cardImage2 from "../imgs/scratch_back.svg";
+import '../styles/scratch.css';
 
 const settings = {
   width: 400, 

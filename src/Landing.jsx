@@ -12,11 +12,15 @@ import action1 from './imgs/action1.svg';
 import action2 from './imgs/action2.svg';
 import action3 from './imgs/action3.svg';
 import scratch_notion from './imgs/scratch_notion.svg';
+import do_you_know_bg from './imgs/do_you_know_bg.svg';
+import how_to_use_public from './imgs/how-to-use-public.svg';
+import how_to_use_ngo from './imgs/how-to-use-ngo.svg';
+import how_to_use_gov from './imgs/how-to-use-gov.svg';
 
 //Component
-import Scratchcard from './ScratchOff';
-import QA from './QA';
-import Carousel from './Carousel';
+import Scratchcard from './components/ScratchOff';
+import QA from './components/QA';
+import Carousel from './components/Carousel';
 
 function Landing() {
 
@@ -93,6 +97,7 @@ return (
     <div className='do-you-know'>
 
         <div className='do-you-know-title'>
+          <img src={do_you_know_bg} alt="" ></img>
           <h2 className='main-title'>你知道嗎？</h2>
           <p className='subtitle'>台灣沒被污染的農地很稀少， <br/>
           但沒日本製造的壓縮機少。</p>
@@ -186,6 +191,49 @@ return (
       <h2 className='main-title'>你的資料如何被運用？</h2>
       <p className='subtitle'>您在系統上的每個微小行動，  <br/>
           都將成為維護農地環境的有利證據！</p>
+
+      <div className='how-to-use-content'>
+
+          <div className='how-to-use-list-wrap'>
+          
+            <div className='how-to-use-list how-to-use-public '>
+              <img src={how_to_use_public} alt=""></img>
+              <div className='how-to-use-box '>
+                  <h5>公民（就是你！！）</h5>
+                  <p>在回報系統上標記違章工廠 遊玩大家來找廠</p>
+              </div>
+            </div>
+            
+            <div className='how-to-use-list how-to-use-ngo '>
+              <img src={how_to_use_ngo} alt=""></img>
+              <div className='how-to-use-box'>
+                  <h5>地球公民基金會</h5>
+                  <p>利用空拍圖、土地使用分區確認工廠是否在農地上違規生產、違規增建
+                  </p>
+                  <p>製作公文寄送給地方政府</p>
+              </div>
+            </div>
+            
+            <div className='how-to-use-list how-to-use-gov '>
+              <img src={how_to_use_gov} alt=""></img>
+              <div className='how-to-use-box'>
+                  <h5>地方政府</h5>
+                  <p>到現場檢查違規實情</p>
+                  <p>依法進行斷水斷電、勒令停工等處置</p>
+              </div>
+            </div>
+
+          </div>
+          
+          <div className='how-to-use-3ways'>
+            <div className='ways-list'>充實通報成果！</div>
+            <div className='ways-list'>與政府溝通的依據！</div>
+            <div className='ways-list'>請想第三個！</div>
+          </div>
+
+      </div>
+
+
     </div>
 
     <hr></hr>
