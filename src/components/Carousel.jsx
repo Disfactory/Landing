@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import '../styles/carousel.scss';
 
 import arrow_left from '../imgs/arrow_left.svg';
