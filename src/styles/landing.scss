@@ -440,6 +440,7 @@ hr{
   .how-to-use-3ways{
     margin: auto;
     text-align: center;
+    gap: 20px;
 
     .ways-list{
       margin: auto;
@@ -521,6 +522,9 @@ hr{
 .QA{
   padding: 40px 24px;
 }
+
+
+
 
 
 
@@ -667,7 +671,7 @@ hr{
   align-items: center;
   justify-content: center;
   // height: 788px;
-  padding: 200px 200px 80px;
+  padding: 100px 100px 80px;
   position: relative;
 
     .do-you-know-title{
@@ -693,7 +697,7 @@ hr{
 }
 
 .disfactory-tools{
-  padding: 60px 170px 80px;
+  padding: 60px 100px 80px;
 
     .tools-container{
       display: flex;
@@ -732,7 +736,7 @@ hr{
 .how-to-use{
 
   .how-to-use-content{
-    padding: 100px;
+    padding: 20px;
     max-width: 1200px;
     margin: auto;
     margin-bottom: 163px;
@@ -881,9 +885,21 @@ hr{
 }
 
 
+@media screen and (min-width: 1200px) {
 
+  .do-you-know{
+    padding: 200px 200px 80px;
+  }
 
+  .disfactory-tools {
+    padding:60px 170px 80px;
+  }
 
-
+  .how-to-use{
+    .how-to-use-content {
+      padding: 100px;
+    }
+  }
+}
 
 
