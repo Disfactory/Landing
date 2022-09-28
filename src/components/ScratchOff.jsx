@@ -6,7 +6,7 @@ import cardImage2 from "../imgs/scratch_back.svg";
 import '../styles/scratch.css';
 
 const settings = {
-  width: 400, 
+  width: 320, 
   height: 300,
   image: cardImage,
   finishPercent: 100, //complete percent
@@ -14,7 +14,7 @@ const settings = {
 };
 const ScratchCardComponent = () => (
   <ScratchCard {...settings}>
-    <img src={cardImage2 } width="400" height="300" alt=""></img>
+    <img src={cardImage2 } width="320" height="300" alt=""></img>
   </ScratchCard>
 );
 
