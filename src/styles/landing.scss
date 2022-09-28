@@ -370,6 +370,7 @@ hr{
 
   .how-to-use-content{
     border: 1px solid #00000074;
+    padding: 15px;
 
     .how-to-use-list-wrap{
       margin-bottom: 120px;
@@ -497,6 +498,7 @@ hr{
 
     .scratch-notion{
       margin-left: 30px;
+      display: none;
     }
 
     .scratchcard:hover{
@@ -723,8 +725,6 @@ hr{
 
 }
 
-
-
 .how-to-use{
 
   .how-to-use-content{
@@ -845,12 +845,6 @@ hr{
   }
 }
 
-
-
-
-
-
-
 .action-change{
   padding: 60px 170px 20px;
 
@@ -871,6 +865,13 @@ hr{
     text-align: right;
   }
 
+}
+
+.scratch-off{
+
+  .scratch-notion{
+    display: block;
+  }
 }
 
 }
