@@ -1,27 +1,55 @@
-.main-title{
-  font-weight: 700;
-  font-size: 38px;
-  line-height: 1.5;
-  color: #2b4754;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-bottom: 32px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    user-select: none; 
+    -webkit-user-drag: none;
 }
 
-.subtitle{
-  font-size: 22px;
-  margin-bottom: 18px;
-  font-family: 'Noto Sans CJK TC';
+:root {
+  --primary-background-color: #CDE9E4;
+  --secondary-background-color:  #EAF3BF;
+  --primary-color:  #2B4754;
+  --secondary-color: #4C6821;
+}
+
+
+@mixin h1 {
+  font-family: 'PingFang TC';
   font-style: normal;
-  font-weight: 500;
-  line-height: 38px;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 59px;
+  display: flex;
+  align-items: center;
   text-align: center;
   letter-spacing: 0.855px;
   color: #2B4754;
 }
 
+
+.main-title{
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 59px;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.subtitle{
+  font-size: 22px;
+  margin-bottom: 18px;
+  font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: 0.855px;
+  color: var(--primary-color);
+}
+
 .description{
-  font-family: 'Noto Sans CJK TC';
+  font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -35,13 +63,12 @@
 hr{
   size: 0.5px;
   width: 80%;
-  // color: #D9E0A2;
   border: 0.5px solid #d9e0a269;
   max-width: 800px;
 }
 
 .tools-subtitle{
-    font-family: 'Noto Sans CJK TC';
+  font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -52,11 +79,11 @@ hr{
     margin: auto;
     margin-bottom: 25px;
     text-align: center;
-    width: 80%;
+    width: 95%;
 }
 
 .tools-description{
-  font-family: 'Noto Sans CJK TC';
+  font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -66,7 +93,7 @@ hr{
   justify-content: center;
   letter-spacing: 0.855px;
   color: #333333;
-  margin-bottom: 22px;
+  margin-bottom: 30px;
   padding: 5px;
 }
 
@@ -118,7 +145,7 @@ hr{
 }
 
 .action-notion{
-  font-family: 'Noto Sans CJK TC';
+  font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
@@ -183,9 +210,170 @@ hr{
 }
 
 
+// navbar hamburger toggle effect 
+
+label .menu {
+  z-index: 50;
+  position: fixed;
+  right: -20px;
+  top: -60px;
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50% 50% 50% 50%;
+  -webkit-transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 0 0 0  #fbfdf0, 0 0 0 0 #fbfdf0;
+  cursor: pointer;
+  
+}
+
+label .hamburger {
+  z-index: 150;
+  position: absolute;
+  top: 89px;
+  left: 45px;
+  width: 30px;
+  height: 2px;
+  background: #2B4754;
+  display: block;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+label .hamburger:after, label .hamburger:before {
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #2B4754;
+}
+
+label .hamburger:before { top: -10px; }
+
+label .hamburger:after { bottom: -10px; }
+
+label input { display: none; }
+// label ul { display: none; }
+
+label input:checked + .menu {
+  box-shadow: 0 0 0 100vw  #fbfdf0, 0 0 0 100vh  #fbfdf0;
+  border-radius: 0;
+  background: #fbfdf0;
+  
+}
+
+label input:checked + .menu .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  
+}
+
+label input:checked + .menu .hamburger:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  bottom: 0;
+  
+}
+
+label input:checked + .menu .hamburger:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+  
+}
+
+label input:checked + .menu + ul { opacity: 1;pointer-events: auto;}
+
+label ul {
+  z-index: 150;
+  position: fixed;
+  top:100px;
+  left: 70px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.4s 0s ease-in-out;
+  transition: 0.4s 0s ease-in-out;
+}
+
+
+
+.sidebar{
+
+      li{
+          margin-right: 35px;
+          color: var(--primary-color); 
+          font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 30px;
+          line-height: 23px;
+          letter-spacing: 0.855px;
+          margin-bottom: 40px;
+      }
+
+      li:hover{
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      a{
+        font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.855px;
+        text-decoration: none;
+        border-radius: 55px;
+        padding: 12px 25px;
+        display: block;
+        max-width: 125px;
+        margin-bottom: 25px;
+      }
+
+      a:hover{
+        cursor: pointer;
+        background: #107393;
+        color: white;
+      }
+
+      a:nth-child(6){
+        border: 2px solid  var(--secondary-color);
+        color: var(--secondary-color);
+        transition: background-color .2s;
+      }
+
+      a:nth-child(6):hover{
+        background-color: #f7ffbf;
+      }
+
+      a:nth-child(7){
+        transition: background-color .2s;
+        color: #107393;
+        border: 2px solid #107393;
+      }
+
+      a:nth-child(7):hover{
+        background-color: #E5F3F3;
+        cursor: pointer;
+      }
+    
+    
+}
+
+// ------------------------------------
+
+
 .forehead{
   overflow: hidden;
-  padding: 80px 24px;
+  padding: 80px 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,26 +402,29 @@ hr{
   .forehead-content{
     z-index: 5;
     
-    .main-title{
-      font-size: 26px;
-      margin-bottom: 10px;
+
+    h1{
+      @include h1;
     }
+
   
     .forehead-btn-wrap{
-      padding: 20px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
           
         a{
-          font-family: 'Noto Sans CJK TC';
+          font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
           font-style: normal;
           font-weight: 700;
           font-size: 16px;
           line-height: 20px;
           text-align: center;
           letter-spacing: 0.855px;
-          color: #2B4754;    
+          color: var(--primary-color); 
           text-decoration: none;
-          background: #CDE9E4;
-          border: 2px solid #2B4754;
+          background: var(--primary-background-color);
+          outline: 2px solid  var(--primary-color);
           border-radius: 55px;
           padding: 12px 28px;
           margin: auto 12px;
@@ -259,56 +450,77 @@ hr{
           display: none;
         }
 
+        .subtitle{
+          margin-bottom: 36px;
+        }
+
       }
 
-      .subtitle{
-        margin-bottom: 36px;
+      .do-you-know-content{
+
+        .description{
+          margin-bottom: 25px;
+          text-indent:33px;
+        }
+
       }
 
-      .description{
-        margin-bottom: 25px;
-        text-indent:33px;
-      }
+
+
 }
 
 .disfactory-tools{
     padding: 40px 24px;
     background: #FBFDF0;
 
+    .main-title{
+      margin-bottom: 55px;
+    }
+
     .disfactory-callout{
       text-align: center;
 
       .tools-subtitle{
-        color: #4C6821;
-        background: #EAF3BF;
+        color: var(--secondary-color);
+        background: var(--secondary-background-color);
+        max-width: 500px;
       }
 
       img{
         margin-bottom: 31px;
       }
 
-      .callout-tips{
-        display: flex;
-        align-items: center;
+      .callout-tips-wrap{
+        width: 40%;
         margin: auto;
-        margin-bottom: 19px;
-        width: 80%;
+        min-height: 220px;
+        min-width: 270px;
 
-        .tools-num{
-          color: #4a5613;
-          background-color: #eaf3bf;
+        .callout-tips{
+          display: flex;
+          align-items: center;
+          margin: auto;
+          margin-bottom: 19px;
+  
+          .tools-num{
+            color: #4a5613;
+            background-color: var(--secondary-background-color);
+          }
+  
+          p{
+            font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 33px;
+            letter-spacing: 0.855px;
+            color: #4A5613;
+            text-align: left;
+          }
         }
 
-        p{
-          font-family: 'Noto Sans CJK TC';
-          font-style: normal;
-          font-weight: 700;
-          font-size: 17px;
-          line-height: 33px;
-          letter-spacing: 0.855px;
-          color: #4A5613;
-        }
       }
+
 
       .tools-btn{
         background:  #697f01;
@@ -324,37 +536,48 @@ hr{
       text-align: center;
       
       .tools-subtitle{
-        color: #2B4754;
-        background: #CDE9E4;
+        color: var(--primary-color); 
+        background: var(--primary-background-color);
+        max-width: 500px;
       }
 
       img{
         margin-bottom: 31px;
       }
 
-      .findout-tips{
-        display: flex;
-        align-items: center;
+
+      .findout-tips-wrap{
+        width: 40%;
         margin: auto;
-        margin-bottom: 19px;
-        // outline: 1px solid red;
-        width: 80%;
+        min-height: 220px;
+        min-width: 270px;
 
-        .tools-num{
-          color: #164E60;
-          background: #CDE9E4;
+        .findout-tips{
+          display: flex;
+          align-items: center;
+          margin: auto;
+          margin-bottom: 19px;
+  
+          .tools-num{
+            color: #164E60;
+            background: var(--primary-background-color);
+          }
+  
+          p{
+            font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 33px;
+            letter-spacing: 0.855px;
+            color: #164E60;
+            text-align: left;
+          }
         }
 
-        p{
-          font-family: 'Noto Sans CJK TC';
-          font-style: normal;
-          font-weight: 700;
-          font-size: 17px;
-          line-height: 33px;
-          letter-spacing: 0.855px;
-          color: #164E60;
-        }
       }
+      
+
 
       .tools-btn{
         background: #107393;
@@ -381,7 +604,7 @@ hr{
 
       .how-to-use-public, .how-to-use-gov{
         div{
-          background: #EAF3BF;
+          background: var(--secondary-background-color);
         }
       }
   
@@ -394,7 +617,7 @@ hr{
   
       .how-to-use-list{
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 75px;
   
         img{
           width: 60%;
@@ -407,20 +630,20 @@ hr{
   
   
         h5{
-          font-family: 'Noto Sans CJK TC';
+          font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
           font-style: normal;
           font-weight: 700;
           font-size: 22px;
           line-height: 30px;
           letter-spacing: 0.855px;
-          color: #2B4754;
+          color: var(--primary-color); 
           text-align: center;
           margin-bottom: 12px;
         }
   
         p{
   
-          font-family: 'Noto Sans CJK TC';
+          font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
           font-style: normal;
           font-weight: 600;
           font-size: 18px;
@@ -445,7 +668,7 @@ hr{
     .ways-list{
       margin: auto;
       margin-bottom: 20px;
-      background: #EAF3BF;
+      background: var(--secondary-background-color);
       border-radius: 18px;
       width: 300px;
       height: 240px;
@@ -453,7 +676,7 @@ hr{
       align-items: center;
       justify-content: center;
 
-      font-family: 'Noto Sans CJK TC';
+      font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
       font-style: normal;
       font-weight: 700;
       font-size: 20px;
@@ -495,11 +718,17 @@ hr{
 }
 
 .scratch-off{
-  width: 100%;
-  padding-bottom: 40px;
+  max-width: 800px;
+  margin: 60px auto;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+    .ScratchCard__Canvas{
+      // width: 80%;
+      height: 336px;
+    }
 
     .scratch-notion{
       margin-left: 30px;
@@ -541,6 +770,7 @@ hr{
   text-align: left;
   width: 70%;
   margin: auto;
+  margin-bottom: 22px;
 }
 
 
@@ -560,9 +790,8 @@ hr{
 
             li{
               margin-right: 35px;
-              color: #2b4754;
-
-              font-family: 'Noto Sans TC';
+              color: var(--primary-color); 
+              font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
               font-style: normal;
               font-weight: 500;
               font-size: 16px;
@@ -570,7 +799,6 @@ hr{
               letter-spacing: 0.855px;
               padding: 2px auto;
               border-bottom: 1px solid white;
-
               display: table-cell; 
               position: relative; 
             }
@@ -582,7 +810,7 @@ hr{
 
             li:after {    
               background: none repeat scroll 0 0 transparent;
-              bottom: 0;
+              bottom: -4px;
               content: "";
               display: block;
               height: 1px;
@@ -602,7 +830,7 @@ hr{
       }
 
       a{
-        font-family: 'Noto Sans TC';
+        font-family: 'Noto Sans CJK TC','Noto Sans TC', sans-serif;
         border-radius: 24px;
         font-size: 16px;
         padding: 8px 16px;
@@ -647,8 +875,13 @@ hr{
 
 } 
 
+.sidebar{
+  display: none;
+}
+
 
 .forehead{
+  min-height: 355px;
 
   .forehead_bg_left{
     width: 90%;
@@ -663,6 +896,8 @@ hr{
     bottom: 0px;
   }
 
+
+
 }
 
 
@@ -670,18 +905,27 @@ hr{
   display: flex;
   align-items: center;
   justify-content: center;
-  // height: 788px;
   padding: 100px 100px 80px;
   position: relative;
 
+    .do-you-know-wrap{
+      width: 95%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
     .do-you-know-title{
-      width: 50%;
+      width: 40%;
+      padding-left: 80px;
       
       h2,p {
         text-align: left;
       }
 
       img{
+        height: 90%;
         display: block;
         position: absolute;
         bottom: 0px;
@@ -708,25 +952,43 @@ hr{
 
         .tools-description{
           margin-bottom: 20px;
-          min-height: 150px;
+          min-height: 210px;
         }
 
-        .callout-tips{
-          width: 60%;
+        .callout-tips-wrap{
+          margin-bottom: 30px;
+          width: 80%;
+          min-height: 180px;
+
+          .callout-tips{
+            width: 60%;
+            text-align: left;
+          }
         }
+
+
       }
 
       .findout-disfactory{
         width: 50%;
 
             .tools-description{
-              min-height: 150px;
+              min-height: 210px;
               margin-bottom: 20px;
             }
 
-            .findout-tips{
-              width: 60%;
+            .findout-tips-wrap{
+              margin-bottom: 30px;
+              width: 80%;
+              min-height: 180px;
+
+              .findout-tips{
+                width: 60%;
+                text-align: left;
+              }
             }
+
+            
       }
     }
 
@@ -792,12 +1054,11 @@ hr{
       display: flex;
       flex-direction: row-reverse;
       position: relative;
-      margin-bottom: 70px;
 
       img{
         position: absolute;
         right: 10px;
-        bottom: -90px;
+        bottom: -75px;
       }
 
       .how-to-use-box{
@@ -850,6 +1111,10 @@ hr{
     display: flex;
     align-items: center;
     justify-content: center;
+
+      .ways-list{
+        margin: auto 10px 20px 10px;
+      }
   }
 }
 
