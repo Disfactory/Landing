@@ -10,6 +10,8 @@
 .qa-list{
 
   .qa-content{
+    margin: auto;
+    max-width: 800px;
     margin-bottom: 20px;
 
     .question{
@@ -20,7 +22,7 @@
       padding: 15px;
       display: flex;
       align-items: center;
-      max-width: 800px;
+      // max-width: 800px;
   
       img{
         margin-right: 10px;
@@ -35,7 +37,7 @@
         font-family: 'Noto Sans CJK TC';
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 130%;
         letter-spacing: 0.855px;
         color: #697F01;
@@ -43,6 +45,7 @@
     }
   
     .answer_visible{
+      transition: all 0.3s ease-in-out;
       display: block;
       width: 100%;
       max-width: 740px;
@@ -50,7 +53,6 @@
       border-radius: 8px;
       padding: 100px;
       margin: auto;
-      // margin-bottom: 10px;
     }
 
     .answer_invisible{
@@ -59,14 +61,82 @@
 
   }
 
-
 }
+
+
+// QA toggle plus/minus effect 
+.toggle-closed {
+  margin: 0px 15px 5px 0px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-radius: 50%;
+  outline: 1px solid  #697F01;
+
+  .vertical {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(-90deg);
+  }
+  .horizontal {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+}
+
+.toggle-opened {
+  margin: 0px 15px 5px 0px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-radius: 50%;
+  outline: 1px solid  #697F01;
+
+  // opacity: 1;
+  .vertical {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(90deg);
+  }
+  .horizontal {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+
+.horizontal {
+    position: absolute;
+    background-color: #697F01;
+    width: 16px;
+    height: 3px;
+    left: 50%;
+    margin-left: -8px;
+    top: 50%;
+    margin-top: -1.5px;
+}
+
+.vertical {
+    position: absolute;
+    background-color: #697F01;
+    width: 3px;
+    height: 16px;
+    left: 50%;
+    margin-left: -1.5px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+.toggle-closed:hover, .toggle-open:hover{
+  cursor: pointer;
+}
+
+
 
 
 @media screen and (min-width: 992px) {
 
     .qa-list{
-
       .qa-content{
 
         .question{
