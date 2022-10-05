@@ -3,22 +3,21 @@ import './styles/landing.scss';
 
 // SVG
 import logo from './imgs/logo-and-exclam.png';
-import hamburger from './imgs/hamburger.svg';
 import playgame from './imgs/play-game.svg';
 import disfactory_callout from './imgs/disfactory-callout.svg';
-import forehead_bg1 from './imgs/forehead-bg1.svg';
-import forehead_bg2 from './imgs/forehead-bg2.svg';
+import forehead_bg_left from './imgs/forehead-bg-left.svg';
+import forehead_bg_right from './imgs/forehead-bg-right.svg';
 import action1 from './imgs/action1.svg';
 import action2 from './imgs/action2.svg';
 import action3 from './imgs/action3.svg';
-import scratch_notion from './imgs/scratch_notion.svg';
+// import scratch_notion from './imgs/scratch_notion.svg';
 import do_you_know_bg from './imgs/do_you_know_bg.svg';
 import how_to_use_public from './imgs/how-to-use-public.svg';
 import how_to_use_ngo from './imgs/how-to-use-ngo.svg';
 import how_to_use_gov from './imgs/how-to-use-gov.svg';
 
 //Component
-import Scratchcard from './components/ScratchOff';
+// import Scratchcard from './components/ScratchOff';
 import QA from './components/QA';
 import Carousel from './components/Carousel';
 
@@ -65,29 +64,54 @@ return (
             <a href="https://bit.ly/3vFXXaj">鍵盤參與</a>
           </div>
 
-          <div className='nav-hamburger'>
-            <img alt="" src={hamburger}/>
-          </div>
+          <label className='sidebar'>
+
+          <input type="checkbox" />
+            <span className="menu"> <span className="hamburger"></span> </span>
+              <ul className='sidebar'>
+              <li onClick={()=>{
+                  const k = document.querySelector('.do-you-know');
+                  k.scrollIntoView({behavior: "smooth"});
+                }}>你知道嗎？</li>
+                <li onClick={()=>{
+                  const k = document.querySelector('.disfactory-tools');
+                  k.scrollIntoView({behavior: "smooth"});
+                }}>回報系統</li>
+
+                <li onClick={()=>{
+                  const k = document.querySelector('.what-we-do');
+                  k.scrollIntoView({behavior: "smooth" , block: "start", inline: "start"});
+                }}>目前成果</li>
+                <li onClick={()=>{
+                  const k = document.querySelector('.QA');
+                  k.scrollIntoView({behavior: "smooth"});
+                }}>常見問題</li>
+                <li onClick={()=>{
+                  const k = document.querySelector('.do-you-know');
+                  k.scrollIntoView({behavior: "smooth"});
+                }}>新聞報導</li>
+                <a href="https://bit.ly/3kESSsQ">拍照回報</a>
+                <a href="https://bit.ly/3vFXXaj">鍵盤參與</a>
+              </ul>
+          </label>
 
       </div>
-
-
-
       
     </div>
+            
 
     <div className='forehead'>
     
-    <img src={forehead_bg1} alt="" className='forehead_bg_left'/>
-    <img src={forehead_bg2} alt="" className='forehead_bg_right'/> 
+    <img src={forehead_bg_left} alt="" className='forehead_bg_left'/>
+    <img src={forehead_bg_right} alt="" className='forehead_bg_right'/> 
 
         <div className='forehead-content'>
-          <h2 className='main-title'>農地違章工廠回報系統</h2> 
-          <p className='subtitle'>用科技工具改變政府</p>
+          <h1>農地違章工廠回報系統</h1> 
+          <p className='subtitle'>by一群想用科技工具改變政府的下班族</p>
 
           <div className='forehead-btn-wrap'>
-                <a href="https://bit.ly/3kESSsQ">拍照回報</a>
-                <a href="https://bit.ly/3vFXXaj">鍵盤參與</a>
+              <a href="https://bit.ly/3kESSsQ">拍照回報</a>
+              <a href="https://bit.ly/3vFXXaj">鍵盤參與</a>
           </div>
         </div>
 
@@ -96,12 +120,14 @@ return (
     
     <div className='do-you-know'>
 
-        <div className='do-you-know-title'>
-          <img src={do_you_know_bg} alt="" ></img>
-          <h2 className='main-title'>你知道嗎？</h2>
-          <p className='subtitle'>台灣沒被污染的農地很稀少， <br/>
-          但沒日本製造的壓縮機少。</p>
-        </div>
+        <div className='do-you-know-wrap'>
+
+          <div className='do-you-know-title'>
+              <img src={do_you_know_bg} alt="" ></img>
+              <h2 className='main-title'>你知道嗎？</h2>
+              <p className='subtitle'>台灣沒被污染的農地很稀少， <br/>
+              但沒日本製造的壓縮機少。</p>
+          </div>
 
           <div className='do-you-know-content'>
 
@@ -119,6 +145,9 @@ return (
 
           </div>
 
+        </div>
+
+
     </div>
 
 
@@ -135,20 +164,26 @@ return (
                   且程序往往複雜。<br/>
                   違章工廠檢舉系統協助你快速、匿名檢舉，還不用擔心被找碴！</p>
                   
-                  <div className='callout-tips'>
-                    <div className='tools-num'>1</div>
-                    <p>拍照</p>
+
+                  <div className='callout-tips-wrap'>
+
+                      <div className='callout-tips'>
+                        <div className='tools-num'>1</div>
+                        <p>拍照</p>
+                      </div>
+                      
+                      <div className='callout-tips'>
+                        <div className='tools-num'>2</div>
+                        <p>標記地點+上傳</p>
+                      </div>
+                      
+                      <div className='callout-tips'>
+                        <div className='tools-num'>3</div>
+                        <p>地球公民基金會幫你匿名檢舉</p>
+                      </div>
                   </div>
-                  
-                  <div className='callout-tips'>
-                    <div className='tools-num'>2</div>
-                    <p>標記地點+上傳</p>
-                  </div>
-                  
-                  <div className='callout-tips'>
-                    <div className='tools-num'>3</div>
-                    <p>地球公民基金會幫你匿名檢舉</p>
-                  </div>
+
+              
 
                   <a className='tools-btn' href="https://bit.ly/3kESSsQ">新增可疑工廠</a>
 
@@ -162,18 +197,23 @@ return (
                   一起用遊戲改變世界！<br/>進入「大家來找廠」
                   一起用空拍圖辨識</p>
 
-                  <div className='findout-tips'>
-                    <div className='tools-num'>1</div>
-                    <p>比對判斷空拍圖</p>
+                  <div className='findout-tips-wrap'>
+
+                      <div className='findout-tips'>
+                        <div className='tools-num'>1</div>
+                        <p>比對判斷空拍圖</p>
+                      </div>
+                      <div className='findout-tips'>
+                        <div className='tools-num'>2</div>
+                        <p>送出！</p>
+                      </div>
+                      <div className='findout-tips'>
+                        <div className='tools-num'>3</div>
+                        <p>地球公民基金會批次檢舉</p>
+                      </div>
+
                   </div>
-                  <div className='findout-tips'>
-                    <div className='tools-num'>2</div>
-                    <p>送出！</p>
-                  </div>
-                  <div className='findout-tips'>
-                    <div className='tools-num'>3</div>
-                    <p>地球公民基金會批次檢舉</p>
-                  </div>
+
             
                   <a className='tools-btn' href="https://bit.ly/3vFXXaj">馬上鍵盤參與</a>
 
@@ -275,17 +315,6 @@ return (
           我們就大發慈悲的告訴你</p>
     </div>
 
-    <div className='scratch-off'>
-
-      <div className='scratchcard'>
-        <Scratchcard/>
-      </div>
-      
-      <div className='scratch-notion'>
-        <img src={scratch_notion} alt=""></img>
-      </div>
-
-    </div>
 
     <hr></hr>
 
@@ -304,6 +333,18 @@ return (
           我們就大發慈悲的告訴你</p>
       <QA/>
       
+    </div>
+
+    <hr></hr>
+
+    <div className='scratch-off'>
+        <div className='scratchcard'>
+          {/* <Scratchcard/> */}
+        </div>
+
+        {/* <div className='scratch-notion'>
+          <img src={scratch_notion} alt=""></img>
+        </div> */}
     </div>
 
 
