@@ -663,6 +663,7 @@ label ul {
   .how-to-use-3ways{
     margin: auto;
     text-align: center;
+    gap: 20px;
 
     .ways-list{
       margin: auto;
@@ -750,6 +751,9 @@ label ul {
 .QA{
   padding: 40px 24px;
 }
+
+
+
 
 
 
@@ -898,7 +902,10 @@ label ul {
 
 
 .do-you-know{
-  padding: 140px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 100px 80px;
   position: relative;
 
     .do-you-know-wrap{
@@ -934,11 +941,7 @@ label ul {
 }
 
 .disfactory-tools{
-  padding: 60px 140px 80px;
-
-    .main-title{
-      margin-bottom: 55px;
-    }
+  padding: 60px 100px 80px;
 
     .tools-container{
       display: flex;
@@ -995,7 +998,7 @@ label ul {
 .how-to-use{
 
   .how-to-use-content{
-    padding: 100px;
+    padding: 20px;
     max-width: 1200px;
     margin: auto;
     margin-bottom: 163px;
@@ -1147,9 +1150,21 @@ label ul {
 }
 
 
+@media screen and (min-width: 1200px) {
 
+  .do-you-know{
+    padding: 200px 200px 80px;
+  }
 
+  .disfactory-tools {
+    padding:60px 170px 80px;
+  }
 
-
+  .how-to-use{
+    .how-to-use-content {
+      padding: 100px;
+    }
+  }
+}
 
 
