@@ -15,17 +15,17 @@ function QA () {
     }else{
       e.currentTarget.childNodes[1].className = "answer_invisible"
     }
-
+    toggleEffect(e.currentTarget.childNodes[0].childNodes[0]);
   }
 
   // FIXME: 只點answerShow應該也要能觸發
   function toggleEffect(e) { 
     
-    const toggleEffect = e.currentTarget.className;
+    const toggleEffect = e.className;
     if(toggleEffect === "toggle-closed"){
-      e.currentTarget.className = "toggle-opened"
+      e.className = "toggle-opened"
     }else{
-      e.currentTarget.className  = "toggle-closed"
+      e.className  = "toggle-closed"
     }
   }
 
@@ -39,7 +39,7 @@ function QA () {
 
           <div className="question">
 
-            <div className="toggle-closed" onClick={(e)=>{toggleEffect(e)}}>
+            <div className="toggle-closed" >
               <div className="circle">
                 <div className="horizontal"></div>
                 <div className="vertical"></div>
