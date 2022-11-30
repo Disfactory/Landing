@@ -1,12 +1,9 @@
-import styled from 'styled-components'
 import { ThemeProvider } from 'styled-components'
 import theme from '../styles/theme'
 
 //reset & setting basic styled component
 import { ResetStyle, GlobalStyle } from '../styles/global-style'
-
-//components
-import Main from '../components/landing/main'
+import Main from '../components/main'
 
 export default function LandingPage() {
   return (
