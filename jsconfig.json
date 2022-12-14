@@ -25,9 +25,7 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "next-sitemap.config.mjs",
-    "src/components",
-    "src/custom.d.ts"
+    "next-sitemap.config.mjs"
   ],
   "exclude": ["node_modules", "prettier.config.js"]
 }
