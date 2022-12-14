@@ -1,14 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import theme from '../../styles/theme'
+import React from 'react';
+import styled from 'styled-components';
 
 const BodyContainer = styled.div`
   padding: 55px 0px;
   text-align: center;
+  background: ${(props) => (props.color ? props.color : '#ffffff')};
   .title {
     font-weight: 700;
-    font-size: 38px;
-    line-height: 1.3;
+    ${({ theme }) => theme.fontSize['title-main-md']};
     color: #2b4754;
     margin-bottom: 15px;
   }
@@ -23,15 +22,19 @@ const BodyContainer = styled.div`
     margin: 0px auto 30px;
     max-width: 270px;
   }
-`
+`;
 
-export default function SectionBody({ children, title, subtitle }) {
-
+export default function SectionBody({
+  children = null,
+  title = '',
+  subtitle = '',
+  color = '',
+}) {
   return (
-   <BodyContainer>
+    <BodyContainer color={color}>
       <div className='title'>{title}</div>
       <div className='subtitle'>{subtitle}</div>
       {children}
-   </BodyContainer>
-  )
+    </BodyContainer>
+  );
 }

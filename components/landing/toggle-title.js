@@ -16,7 +16,8 @@ const TitleContainer = styled.div`
 `;
 
 export default function ToggleTitle(props) {
-  const toggleClass = props.isActive ? '#eaf3bf' : '#eaf3bf';
+  // toggle title想要有變化的話放這邊（ex: 底色改變 or icon改變）
+  const toggleClass = props.isActive ? '#eaf3bf' : '#ffffff';
 
   function toggle() {
     if (props.isActive) {

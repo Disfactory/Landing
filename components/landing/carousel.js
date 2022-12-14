@@ -8,8 +8,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 //icons
-import ArrowLeft from '../icons/arrow-left';
-import ArrowRight from '../icons/arrow-right';
+// import ArrowLeft from '../icons/arrow-left';
+// import ArrowRight from '../icons/arrow-right';
 
 const SwiperContainer = styled.div`
   max-width: 1000px;

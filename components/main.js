@@ -1,57 +1,45 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-import Nav from './nav';
-import Footer from './footer';
-import SectionBody from './landing/section-body';
-import ActionChange from './landing/action-change';
-import InfoUse from './landing/info-use';
-import Carousel from './landing/carousel';
-import ToggleList from './landing/toggle-list';
+import Nav from '~/components/nav';
+import Footer from '~/components/footer';
+import SectionBody from '~/components/landing/section-body';
+import ActionChange from '~/components/landing/action-change';
+import InfoUse from '~/components/landing/info-use';
+// import Carousel from './landing/carousel';
+import ToggleList from '~/components/landing/toggle-list';
+import Tool from '~/components/landing/tool';
+import Forehead from '~/components/landing/forehead';
+import Header from '~/components/header';
+
+import { QAtoggleInfo } from '../constants/QA-toggle';
 
 const ContentContainer = styled.div`
   width: 100%;
-  padding-top: 100px;
+  padding-top: 60px;
 `;
 
-const toggleInfo = [
-  {
-    id: '001',
-    question: '回報前，你需要知道這些～',
-    answer: '問題1回答',
-  },
-  {
-    id: '002',
-    question: '回報時，這些注意事項必看！',
-    answer: '問題2回答',
-  },
-  {
-    id: '003',
-    question: '回報後，怎麼了解成效？ ',
-    answer: '問題3回答',
-  },
-  {
-    id: '004',
-    question: '想更加了解這個系統看這邊！',
-    answer: '問題4回答',
-  },
-  {
-    id: '005',
-    question: '我想知道我家附近有沒有農地違章工廠！',
-    answer: '問題5回答',
-  },
-];
-
-const toggleLists = toggleInfo.map((item, index) => {
+const toggleLists = QAtoggleInfo.map((item, index) => {
   return <ToggleList data={item} order={index} key={item.id} />;
 });
 
 export default function Main() {
   return (
     <Fragment>
-      {/* TODO: Nav styled component尚未處理完，暫時先註解 */}
-      {/* <Nav /> */}
+      <Nav />
       <ContentContainer>
+        <Header
+          title={'農地違章工廠回報系統'}
+          subtitle={'by一群想用科技工具改變政府的下班族'}
+        />
+        <Forehead
+          title={'對的事，再難也要做！'}
+          subtitle={'我們不是沒有恐懼， 但我們知道比恐懼更重要的事。'}
+        />
+        <SectionBody title={'於是，我們製作了這些工具！'} color='#FBFDF0'>
+          <Tool />
+        </SectionBody>
+
         <SectionBody
           title={'你的資料如何被運用？'}
           subtitle={

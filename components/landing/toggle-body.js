@@ -18,7 +18,7 @@ const BodyContainer = styled.div`
 `;
 
 export default function ToggleTitle(props) {
-  const style = classNames({ noShow: props.show });
+  const style = classNames({ noShow: !props.show });
   return (
     <BodyContainer>
       <div className={style}>{props.data.answer}</div>

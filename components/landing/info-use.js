@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { HowToUseInfo, HowToUseStepInfo } from '../../constants/how-to-use';
 
 const InfoContainer = styled.div`
   width: 90%;
@@ -50,7 +51,8 @@ const InfoList = styled.div`
 `;
 
 const StepList = styled.div`
-  width: 300px;
+  width: 80%;
+  max-width: 300px;
   height: 240px;
   background: #eaf3bf;
   border-radius: 18px;
@@ -60,27 +62,7 @@ const StepList = styled.div`
   margin: 10px auto;
 `;
 
-const infoList = [
-  {
-    id: '01',
-    title: '公民（就是你！）',
-    description: '在回報系統上標記違章工廠 遊玩大家來找廠',
-  },
-  {
-    id: '02',
-    title: '地球公民基金會',
-    description:
-      '利用空拍圖、土地使用分區確認工廠是否在農地上違規生產、違規增建 製作公文寄送給地方政府',
-  },
-  {
-    id: '03',
-    title: '地方政府',
-    description:
-      '到現場檢查違規實情 依法進行斷水斷電、勒令停工等處置 遊玩大家來找廠',
-  },
-];
-
-const infoLists = infoList.map((item) => {
+const infoLists = HowToUseInfo.map((item) => {
   return (
     <InfoList key={item.id}>
       <p>{item.title}</p>
@@ -89,14 +71,13 @@ const infoLists = infoList.map((item) => {
   );
 });
 
-const stepInfo = ['充實通報成果！', '與政府溝通的依據！', '請想第三個'];
-const stepLists = stepInfo.map((item, index) => {
+const stepLists = HowToUseStepInfo.map((item, index) => {
   return <StepList key={index}>{item}</StepList>;
 });
 
 export default function InfoUse() {
   return (
-    <InfoContainer>
+    <InfoContainer id='info'>
       <div className='info-list-group'>{infoLists}</div>
       <div className='step-list-group'>{stepLists}</div>
     </InfoContainer>

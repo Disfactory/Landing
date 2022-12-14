@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../../styles/theme';
+import { ActionChangeInfo } from '../../constants/action-change';
 
 const ListContainer = styled.div`
   width: 80%;
   max-width: 1000px;
   margin: auto;
   text-align: center;
+
+  a {
+    text-decoration: underline;
+    color: #979797;
+  }
 
   > p {
     font-weight: 400;
@@ -67,38 +72,7 @@ const ActionList = styled.div`
   }
 `;
 
-const Sources = styled.div`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.3;
-  text-align: right;
-  letter-spacing: 0.855px;
-  color: #979797;
-`;
-
-// TODO: 為何有些可以直接辨識檔案為js?
-const dataList = [
-  {
-    id: 1,
-    image: '/images/action1.svg',
-    amount: '513',
-    notion: '累積回報人次',
-  },
-  {
-    id: 2,
-    image: '/images/action2.svg',
-    amount: '9999',
-    notion: '累積申訴公文',
-  },
-  {
-    id: 3,
-    image: '/images/action3.svg',
-    amount: '888',
-    notion: '間被裁罰工廠',
-  },
-];
-
-const actionList = dataList.map((item) => {
+const actionList = ActionChangeInfo.map((item) => {
   return (
     <ActionList key={item.id}>
       <img src={item.image} alt=''></img>
@@ -110,10 +84,20 @@ const actionList = dataList.map((item) => {
 
 export default function ActionChange() {
   return (
-    <ListContainer>
+    <ListContainer id='action-change'>
       <ListWrap>{actionList}</ListWrap>
       <p>
-        資料來源｜總工廠數：農委會農業及農地資源盤查結果；檢舉數、參與人次：本回報系統
+        資料來源｜總工廠數：
+        <a href='https://map.coa.gov.tw/farmland/survey.html' target='_blank'>
+          農委會農業及農地資源盤查結果
+        </a>
+        ；檢舉數、參與人次：
+        <a
+          href='https://disfactory.tw/#map=14.00/120.48504632216294/24.088258816482295'
+          target='_blank'
+        >
+          本回報系統
+        </a>
       </p>
     </ListContainer>
   );
