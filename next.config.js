@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  poweredByHeader: false,
   images: {
+    domains: ['storage.googleapis.com'],
     remotePatterns: [
       {
         hostname: '*',
@@ -16,8 +16,7 @@ const nextConfig = {
       ssr: true,
     },
   },
-  webpack: (config, options) => {
-    // graphql files
+  webpack(config) {
     config.module.rules.push({
       test: /\.(graphql|gql)$/,
       exclude: /node_modules/,
@@ -27,22 +26,7 @@ const nextConfig = {
         },
       ],
     });
-
     return config;
-  },
-  async rewrites() {
-    return [
-      // only for index
-      {
-        source: '/politics-tracker',
-        destination: '/',
-      },
-      // for other page under /politics-tracker
-      {
-        source: '/politics-tracker/:path*',
-        destination: '/:path*',
-      },
-    ];
   },
   output: 'standalone',
 };
