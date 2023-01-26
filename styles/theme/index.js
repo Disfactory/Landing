@@ -23,16 +23,14 @@ export const theme = {
     gray: '#333333',
     red: '#FA6B62',
     brownGreen: '#4a5613',
-    while: '#FFFFFF',
+    white: '#FFFFFF',
   },
   fontSize: {
-    'title-main': 'font-size:24px; line-height: 1.2',
-    'title-main-md': 'font-size:38px; line-height: 1.2; font-weight: 700',
-    'title-sub': 'font-size:20px; line-height: 1.3',
-    'title-sub-md':
-      'font-size:22px; line-height: 1.3;   letter-spacing: 0.855px;',
-    button: 'font-size:14px; line-height: 1.5',
-    'button-md': 'font-size:16px; line-height: 1.5',
+    'title-main-sm': 'font-size:32px; line-height: 1.5; font-weight: 700;',
+    'title-main-md': 'font-size:38px; line-height: 1.5; font-weight: 700;',
+    'subtitle-sm': 'font-size:22px; line-height: 1.8; font-weight: 400;',
+    normal: 'font-size:16px; line-height: 1.8; font-weight: 400;',
+    'normal-xl': 'font-size:22px; line-height: 1.8; font-weight: 400;',
   },
   breakpoint: {
     xs: `@media (min-width: ${mediaSize.xs}px)`,

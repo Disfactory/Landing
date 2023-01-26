@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HowToUseInfo, HowToUseStepInfo } from '../../constants/how-to-use';
+import { HowToUseInfo, HowToUseStepInfo } from '../constants/how-to-use';
 
 const InfoContainer = styled.div`
   width: 90%;
