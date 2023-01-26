@@ -2,23 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BodyContainer = styled.div`
-  padding: 55px 0px;
+  padding: 55px 20px;
   text-align: center;
   background: ${(props) => (props.color ? props.color : '#ffffff')};
   .title {
     font-weight: 700;
-    ${({ theme }) => theme.fontSize['title-main-md']};
-    color: #2b4754;
+    ${({ theme }) => theme.fontSize['title-main-sm']};
+    color: ${({ theme }) => theme.textColor.darkGreen};
     margin-bottom: 15px;
   }
   .subtitle {
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.5;
+    ${({ theme }) => theme.fontSize['subtitle-sm']};
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333333;
+    color: ${({ theme }) => theme.textColor.gray};
     margin: 0px auto 30px;
     max-width: 270px;
   }
@@ -32,7 +30,7 @@ export default function SectionBody({
 }) {
   return (
     <BodyContainer color={color}>
-      <div className='title'>{title}</div>
+      <h2 className='title'>{title}</h2>
       <div className='subtitle'>{subtitle}</div>
       {children}
     </BodyContainer>

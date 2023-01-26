@@ -1,22 +1,29 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
-import Nav from '~/components/nav';
-import Footer from '~/components/footer';
-import SectionBody from '~/components/landing/section-body';
-import ActionChange from '~/components/landing/action-change';
-import InfoUse from '~/components/landing/info-use';
-// import Carousel from './landing/carousel';
-import ToggleList from '~/components/landing/toggle-list';
-import Tool from '~/components/landing/tool';
-import Forehead from '~/components/landing/forehead';
+import Nav from '~/components/layout/nav';
+import Footer from '~/components/layout/footer';
+import SectionBody from '~/components/section-body';
+import ActionChange from '~/components/action-change';
+import InfoUse from '~/components/info-use';
+import Carousel from '~/components/carousel';
+import ToggleList from '~/components/toggle-list';
+import Tool from '~/components/tool';
+import Forehead from '~/components/forehead';
 import Header from '~/components/header';
+import Scratch from '~/components/scratch';
+import Canvas from './canvas';
 
 import { QAtoggleInfo } from '../constants/QA-toggle';
 
 const ContentContainer = styled.div`
   width: 100%;
   padding-top: 60px;
+
+  p {
+    font-family: var(--raleway-font);
+  }
 `;
 
 const toggleLists = QAtoggleInfo.map((item, index) => {
@@ -24,6 +31,22 @@ const toggleLists = QAtoggleInfo.map((item, index) => {
 });
 
 export default function Main() {
+  // const [data, setData] = useState('');
+  // const fetchData = async () => {
+  //   const response = await axios(
+  //     'https://about.disfactory.tw/api/statistics/total'
+  //     // '/api/statistics/total' //好奇這個在dev階段要怎麼測XD
+  //   );
+
+  //   setData(response?.data);
+  // };
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // console.log('data', data);
+
   return (
     <Fragment>
       <Nav />
@@ -65,7 +88,7 @@ export default function Main() {
           title={'目前成果'}
           subtitle={'我們不是沒有恐懼，但我們知道比恐懼更重要的事。'}
         >
-          {/* <Carousel /> */}
+          <Carousel />
         </SectionBody>
 
         <SectionBody
@@ -79,8 +102,9 @@ export default function Main() {
           title={'了解更多'}
           subtitle={'既然你誠心誠意的發問了，那我就大發慈悲的告訴你'}
         >
-          {/* <Carousel /> */}
+          <Carousel />
         </SectionBody>
+        <Canvas />
       </ContentContainer>
       <Footer />
     </Fragment>

@@ -15,6 +15,7 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 200;
 `;
 
 const Logo = styled.div`
@@ -49,7 +50,27 @@ const MenuBar = styled.ul`
   li {
     margin: 10px;
     cursor: pointer;
+    position: relative;
   }
+
+  li:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -4px;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: black;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+  li:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
   > a:nth-child(even) {
     border: 2px solid #697f01;
     border-radius: 55px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ActionChangeInfo } from '../../constants/action-change';
+import { ActionChangeInfo } from '../constants/action-change';
 
 const ListContainer = styled.div`
   width: 80%;
@@ -54,7 +54,7 @@ const ActionList = styled.div`
     line-height: 100%;
     text-align: center;
     color: #fa6b62;
-    font-family: 'Noto Sans CJK TC';
+    /* font-family: 'Noto Sans CJK TC'; */
     margin: 15px auto;
   }
 
