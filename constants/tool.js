@@ -1,9 +1,6 @@
 const ToolInfo = [
   {
     id: 'tool01',
-    color: '#4A5613',
-    bgColor: '#EAF3BF',
-    buttonColor: '#697F01',
     title: '違章工廠回報系統',
     image: '/images/tool-disfactory-callout.svg',
     description:
@@ -13,11 +10,13 @@ const ToolInfo = [
     list3: '地球公民基金會幫你匿名檢舉',
     button: '新增可疑工廠',
     link: '',
+    bgColor: '#EAF3BF',
+    color: '#4A5613',
+    buttonColor: '#697F01',
+    hoverColor: '',
   },
   {
     id: 'tool02',
-    color: '#164E60',
-    bgColor: '#CDE9E4',
     buttonColor: '#107393',
     title: '大家來找廠',
     image: '/images/tool-play-game.svg',
@@ -28,6 +27,10 @@ const ToolInfo = [
     list3: '地球公民基金會批次檢舉',
     button: '馬上鍵盤參與',
     link: '',
+    bgColor: '#CDE9E4',
+    color: '#2B4754',
+    buttonColor: '#107393',
+    hoverColor: '',
   },
 ];
 
