@@ -18,7 +18,7 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Button = styled.button`
   max-width: 409px;
   width: 80%;
   height: 60px;
@@ -30,10 +30,19 @@ const Title = styled.div`
   margin: auto;
   margin-bottom: 32px;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.15);
+  ${({ theme }) => theme.fontSize['normal']};
 
   &:hover {
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.15);
     transition: 0.3s;
+  }
+
+  &:active {
+    box-shadow: #422800 3px 3px 0 0;
+    transform: translate(4px, 4px);
   }
 `;
 
@@ -52,18 +61,6 @@ const Content = styled.div`
     width: 550px;
   }
 
-  .note {
-    position: absolute;
-    right: -160px;
-    top: -70px;
-    background: url('/images/scratch_note.svg');
-    width: 189px;
-    height: 97.5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .scratch-back {
     display: flex;
     align-items: center;
@@ -73,13 +70,40 @@ const Content = styled.div`
   #canvas {
     position: absolute;
     top: 0;
+    //TODO: 想改滑鼠鼠標圖樣！
+    cursor: 'url(../public/images/coin.ico), auto';
   }
 `;
 
-// const CanvasFrom = styled.div`
-//   visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
-//   padding: 20px;
-// `;
+const DialogBox = styled.div`
+  display: none;
+
+  ${({ theme }) => theme.breakpoint.xl} {
+    display: block;
+    position: absolute;
+    right: -160px;
+    top: -70px;
+    background: url('/images/scratch_note.svg');
+    width: 189px;
+    height: 97.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-15px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+`;
 
 // @ts-ignore
 const Canvas = (props) => {
@@ -256,7 +280,7 @@ const Canvas = (props) => {
 
   return (
     <Container>
-      <Title ref={buttonRef}>想來玩嗎？點我！</Title>
+      <Button ref={buttonRef}>想來玩嗎？點我！</Button>
 
       <Content>
         <div className='scratch-back'>
@@ -269,7 +293,7 @@ const Canvas = (props) => {
           <canvas ref={canvasRef} id='canvas' width={550} height={height} />
         )}
 
-        <div className='note'>動動手指刮刮看！</div>
+        <DialogBox>動動手指刮刮看！</DialogBox>
       </Content>
     </Container>
   );
