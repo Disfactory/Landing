@@ -111,7 +111,7 @@ export default function CustomHead({ headProps = {} }) {
 
   return (
     <Head>
-      <link rel='icon' href='/images/favicon.ico' />
+      <link rel='icon' href='/favicon.ico' />
       <title key='title'>{siteInformation.title}</title>
       <meta
         name='description'
