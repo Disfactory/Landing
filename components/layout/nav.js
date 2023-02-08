@@ -15,7 +15,7 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 200;
+  z-index: 2000;
 `;
 
 const Logo = styled.div`
