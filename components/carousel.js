@@ -1,6 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Card from '~/components/carousel-card';
+import PublicCard from '~/components/carousel-card-public';
+import NewsCard from '~/components/carousel-card-news';
 
 // Swiper React components & Swiper styles
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -35,7 +36,6 @@ const SwiperContainer = styled.div`
     min-height: 240px;
     text-align: center;
     display: flex;
-    align-items: center;
     justify-content: center;
     background: #f9f9f9;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
@@ -88,7 +88,8 @@ const SwiperContainer = styled.div`
   }
 `;
 
-export default function Carousel() {
+export default function Carousel({ data = [], type = 'public' }) {
+  console.log(data);
   return (
     <>
       <SwiperContainer>
@@ -115,24 +116,23 @@ export default function Carousel() {
             nextEl: '.swiperNext',
           }}
         >
-          <SwiperSlide className='swiperItem' key={1}>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide className='swiperItem' key={2}>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide className='swiperItem' key={3}>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide className='swiperItem' key={4}>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide className='swiperItem' key={5}>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide className='swiperItem' key={6}>
-            <Card />
-          </SwiperSlide>
+          {type === 'public' &&
+            data.map((item) => {
+              return (
+                <SwiperSlide className='swiperItem' key={item.id}>
+                  <PublicCard data={item} />
+                </SwiperSlide>
+              );
+            })}
+
+          {type === 'news' &&
+            data.map((item) => {
+              return (
+                <SwiperSlide className='swiperItem' key={item.id}>
+                  <NewsCard data={item} />
+                </SwiperSlide>
+              );
+            })}
 
           <div className='swiperPrev'>
             <img src='/images/icons/arrow_left.svg' alt='arrow_left' />
