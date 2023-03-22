@@ -14,6 +14,7 @@ import Forehead from '~/components/forehead';
 import Header from '~/components/header';
 import Scratch from '~/components/scratch';
 import Canvas from './canvas';
+import { PublicShare } from '~/constants/public-share';
 
 import { QAtoggleInfo } from '../constants/QA-toggle';
 
@@ -79,16 +80,17 @@ export default function Main() {
           <ActionChange />
         </SectionBody>
 
-        <SectionBody
+        {/* 文字資料尚未補齊，先暫時註解 */}
+        {/* <SectionBody
           title={'我們是誰？'}
-          subtitle={'既然你誠心誠意的發問了那我就大發慈悲的告訴你'}
-        ></SectionBody>
+          subtitle={'來自四面八方，卻有著同樣使命'}
+        ></SectionBody> */}
 
         <SectionBody
-          title={'目前成果'}
-          subtitle={'我們不是沒有恐懼，但我們知道比恐懼更重要的事。'}
+          title={'聽聽他們怎麼說'}
+          // subtitle={'我們不是沒有恐懼，但我們知道比恐懼更重要的事。'}
         >
-          <Carousel />
+          <Carousel data={PublicShare} />
         </SectionBody>
 
         <SectionBody
@@ -99,10 +101,10 @@ export default function Main() {
         </SectionBody>
 
         <SectionBody
-          title={'了解更多'}
-          subtitle={'既然你誠心誠意的發問了，那我就大發慈悲的告訴你'}
+          title={'想深入農地工廠議題，或瀏覽專案相關報導嗎？'}
+          // subtitle={'既然你誠心誠意的發問了，那我就大發慈悲的告訴你'}
         >
-          <Carousel />
+          <Carousel data={PublicShare} />
         </SectionBody>
         <Canvas />
       </ContentContainer>
