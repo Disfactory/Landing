@@ -6,8 +6,12 @@ const InfoContainer = styled.div`
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  padding: 75px 60px 180px;
+  padding: 75px 60px 100px;
   outline: 1px solid #000000;
+
+  .info-list-group {
+    margin-bottom: 50px;
+  }
 
   .step-list-group {
     margin: auto;
@@ -20,7 +24,7 @@ const InfoContainer = styled.div`
   }
 `;
 
-const InfoList = styled.div`
+const InfoBox = styled.div`
   padding: 20px 25px;
   background: #eaf3bf;
   border-radius: 18px;
@@ -60,19 +64,71 @@ const StepList = styled.div`
   align-items: center;
   justify-content: center;
   margin: 10px auto;
+  padding: 0px 30px;
+
+  .title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.855px;
+    color: #000000;
+    margin-bottom: 30px;
+  }
+
+  .desc {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.14px;
+    color: #000000;
+    margin: auto;
+  }
+`;
+
+const InfoList = styled.li`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 15px;
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    > div {
+      background: #e2ebf4;
+    }
+  }
+
+  > div:nth-child(odd) {
+    background: #e2ebf4;
+  }
 `;
 
 const infoLists = HowToUseInfo.map((item) => {
   return (
     <InfoList key={item.id}>
-      <p>{item.title}</p>
-      <span>{item.description}</span>
+      <picture>
+        <img src={`/images/${item.image}`} alt={item.title} />
+      </picture>
+      <InfoBox className='info-box'>
+        <p>{item.title}</p>
+        <span>{item.description}</span>
+      </InfoBox>
     </InfoList>
   );
 });
 
 const stepLists = HowToUseStepInfo.map((item, index) => {
-  return <StepList key={index}>{item}</StepList>;
+  return (
+    <StepList key={index}>
+      <div>
+        <p className='title'> {item.title}</p>
+        <p className='desc'> {item.desc}</p>
+      </div>
+    </StepList>
+  );
 });
 
 export default function InfoUse() {

@@ -12,6 +12,11 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 80px 10px 20px 10px;
+  }
+
+  ${({ theme }) => theme.breakpoint.xl} {
+    padding: 80px 10px 20px 10px;
   }
 `;
 
@@ -45,6 +50,7 @@ const TitleContainer = styled.div`
 
   ${({ theme }) => theme.breakpoint.md} {
     width: 50%;
+    margin-bottom: 0px;
 
     .title {
       max-width: none;
@@ -93,25 +99,50 @@ const Description = styled.div`
   text-align: left;
   line-height: 1.8;
 
-  p {
+  .intro {
+    display: flex;
+    align-items: center;
     margin-bottom: 30px;
-  }
 
-  ${({ theme }) => theme.breakpoint.md} {
-    width: 50%;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
 
-    p {
-      margin-bottom: 80px;
+    picture {
+      margin: 0 20px;
+    }
+
+    img {
+      width: 120px;
+      display: inline-block;
+      margin: auto;
+    }
+
+    ${({ theme }) => theme.breakpoint.lg} {
+      img {
+        width: 180px;
+      }
     }
   }
 
+  ${({ theme }) => theme.breakpoint.md} {
+    width: 70%;
+  }
+
   ${({ theme }) => theme.breakpoint.xl} {
-    ${({ theme }) => theme.fontSize['normal-xl']};
+    font-size: 18px;
   }
 `;
 
 const foreheadItems = ForeheadInfo.map((foreheadItem) => {
-  return <p key={foreheadItem.id}>{foreheadItem.paragraph}</p>;
+  return (
+    <div key={foreheadItem.id} className='intro'>
+      <p key={foreheadItem.id}>{foreheadItem.paragraph}</p>
+      <picture>
+        <img src={`/images/${foreheadItem.image}`}></img>
+      </picture>
+    </div>
+  );
 });
 
 export default function Forehead({ title = '', subtitle = '' }) {

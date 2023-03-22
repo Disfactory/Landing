@@ -84,7 +84,7 @@ const actionList = ActionChangeInfo.map((item) => {
 
 export default function ActionChange() {
   return (
-    <ListContainer id='action-change'>
+    <ListContainer>
       <ListWrap>{actionList}</ListWrap>
       <p>
         資料來源｜總工廠數：
