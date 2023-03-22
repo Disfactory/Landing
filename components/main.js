@@ -12,10 +12,9 @@ import ToggleList from '~/components/toggle-list';
 import Tool from '~/components/tool';
 import Forehead from '~/components/forehead';
 import Header from '~/components/header';
-import Scratch from '~/components/scratch';
 import Canvas from './canvas';
 import { PublicShare } from '~/constants/public-share';
-
+import { NewsShare } from '~/constants/news-share';
 import { QAtoggleInfo } from '../constants/QA-toggle';
 
 const ContentContainer = styled.div`
@@ -24,6 +23,14 @@ const ContentContainer = styled.div`
 
   p {
     font-family: var(--raleway-font);
+  }
+
+  .scratch-canvas {
+    display: none;
+
+    ${({ theme }) => theme.breakpoint.md} {
+      display: block;
+    }
   }
 `;
 
@@ -60,6 +67,7 @@ export default function Main() {
           title={'對的事，再難也要做！'}
           subtitle={'我們不是沒有恐懼， 但我們知道比恐懼更重要的事。'}
         />
+        <span id='tool'></span>
         <SectionBody title={'於是，我們製作了這些工具！'} color='#FBFDF0'>
           <Tool />
         </SectionBody>
@@ -73,6 +81,7 @@ export default function Main() {
           <InfoUse />
         </SectionBody>
 
+        <span id='result'></span>
         <SectionBody
           title={'小小行動，大大改變'}
           subtitle={'這幾年我們使用工具，讓違章工廠無所遁形！'}
@@ -86,27 +95,20 @@ export default function Main() {
           subtitle={'來自四面八方，卻有著同樣使命'}
         ></SectionBody> */}
 
-        <SectionBody
-          title={'聽聽他們怎麼說'}
-          // subtitle={'我們不是沒有恐懼，但我們知道比恐懼更重要的事。'}
-        >
-          <Carousel data={PublicShare} />
+        <SectionBody title={'聽聽他們怎麼說'}>
+          <Carousel data={PublicShare} type='public' />
         </SectionBody>
 
-        <SectionBody
-          title={'常見問題'}
-          subtitle={'既然你誠心誠意的發問了那我就大發慈悲的告訴你'}
-        >
-          {toggleLists}
-        </SectionBody>
+        <span id='question'></span>
+        <SectionBody title={'常見問題'}>{toggleLists}</SectionBody>
 
-        <SectionBody
-          title={'想深入農地工廠議題，或瀏覽專案相關報導嗎？'}
-          // subtitle={'既然你誠心誠意的發問了，那我就大發慈悲的告訴你'}
-        >
-          <Carousel data={PublicShare} />
+        <span id='news'></span>
+        <SectionBody title={'想深入農地工廠議題，或瀏覽專案相關報導嗎？'}>
+          <Carousel data={NewsShare} type='news' />
         </SectionBody>
-        <Canvas />
+        <div className='scratch-canvas'>
+          <Canvas />
+        </div>
       </ContentContainer>
       <Footer />
     </Fragment>

@@ -1,43 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Card = styled.div`
+const Card = styled.a`
   text-align: justify;
   line-height: 1.5;
+  color: black;
+  min-height: 262px;
 
-  > p {
-    margin-bottom: 10px;
+  img {
+    height: 30px;
+    margin-bottom: 20px;
+    display: block;
   }
 
   .name {
-    color: #2b4754;
-    font-weight: 900;
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    height: 60px;
+  }
+
+  .time {
+    font-size: 14px;
+    margin-bottom: 5px;
   }
 
   .intro {
-    color: #858585;
-    font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
   }
-`;
-
-const FigureBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 16px;
 `;
 
 export default function SwiperCard({ data }) {
   return (
-    <Card>
-      <FigureBox>
-        <p className='name'>{data.name}</p>
-      </FigureBox>
-      <p className='quote'>{data.quote}</p>
-      <p className='intro'>{data.intro}</p>
+    <Card href={data.link} target='_blank'>
+      <img src={`/images/${data.imageName}`}></img>
+      <p className='name'>{data.title}</p>
+      <p className='time'>{data.time}</p>
+      <p className='intro'>{data.desc}</p>
     </Card>
   );
 }

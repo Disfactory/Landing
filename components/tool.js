@@ -53,8 +53,8 @@ const Description = styled.div`
 
 const ToolList = styled.ul`
   margin: auto;
-  width: 60%;
   margin-bottom: 40px;
+  width: 25%;
   li {
     color: ${(props) => props.color || '#ffffff'};
     ${({ theme }) => theme.fontSize['normal']};
@@ -78,6 +78,7 @@ const ToolList = styled.ul`
   }
 
   ${({ theme }) => theme.breakpoint.xl} {
+    width: 60%;
     li {
       ${({ theme }) => theme.fontSize['normal-xl']};
       max-width: none;
@@ -101,7 +102,7 @@ const ToolButton = styled.a`
 
 export default function Tool() {
   return (
-    <ToolContainer id='tool'>
+    <ToolContainer>
       {ToolInfo.map((toolItem) => {
         return (
           <ToolBox key={toolItem.id}>

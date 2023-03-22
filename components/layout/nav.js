@@ -128,6 +128,9 @@ export default function Nav() {
         >
           鍵盤參與
         </a>
+        <a href='https://about.disfactory.tw/en/' target='_blank'>
+          English
+        </a>
       </MenuBar>
     </NavContainer>
   );

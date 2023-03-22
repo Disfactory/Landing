@@ -89,7 +89,6 @@ const SwiperContainer = styled.div`
 `;
 
 export default function Carousel({ data = [], type = 'public' }) {
-  console.log(data);
   return (
     <>
       <SwiperContainer>

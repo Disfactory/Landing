@@ -13,11 +13,23 @@ const TitleContainer = styled.div`
   border-radius: 8px;
   margin-bottom: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  .circle {
+    width: 34px;
+    height: 34px;
+    outline: 2px solid #697f01;
+    border-radius: 50%;
+    margin-right: 20px;
+    text-align: center;
+  }
 `;
 
 export default function ToggleTitle(props) {
   // toggle title想要有變化的話放這邊（ex: 底色改變 or icon改變）
   const toggleClass = props.isActive ? '#eaf3bf' : '#ffffff';
+  const toggleIcon = props.isActive ? '-' : '+';
 
   function toggle() {
     if (props.isActive) {
@@ -28,10 +40,9 @@ export default function ToggleTitle(props) {
   }
 
   return (
-    <TitleContainer>
-      <div className={toggleClass} onClick={toggle}>
-        {props.data.question}
-      </div>
+    <TitleContainer onClick={toggle}>
+      <div className='circle'>{toggleIcon}</div>
+      <div className={toggleClass}>{props.data.question}</div>
     </TitleContainer>
   );
 }
