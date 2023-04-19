@@ -3,6 +3,7 @@ import Head from "next/head";
 export default function En() {
   return (
     <div id="en">
+      <title>Disfactory | Citizen of Earth Taiwan</title>
       <Head>
         <link
           rel="stylesheet"
