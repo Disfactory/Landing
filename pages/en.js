@@ -72,7 +72,7 @@ ul ul {
 
         <p>
           Disfactory – save the farmlands by open source technology and
-          crowdsourcing (2021)
+          crowdsourcing (2021){" "}
           <a href="https://english.cw.com.tw/article/article.action?id=2982">
             https://english.cw.com.tw/article/article.action?id=2982
           </a>
@@ -82,20 +82,21 @@ ul ul {
 
         <ul>
           <li>
-            About Page:
+            About Page:{" "}
             <a href="https://about.disfactory.tw/">
               https://about.disfactory.tw/
             </a>
           </li>
 
           <li>
-            Map reporting platform:
+            Map reporting platform:{" "}
             <a href="https://disfactory.tw/">https://disfactory.tw/</a>
           </li>
 
           <li>
-            Satellite image mini-game campaign:
+            Satellite image mini-game campaign:{" "}
             <a href="https://spot.disfactory.tw/">
+              {" "}
               https://spot.disfactory.tw/
             </a>
           </li>
@@ -105,7 +106,7 @@ ul ul {
 
         <ul>
           <li>
-            GitHub:
+            GitHub:{" "}
             <a href="https://github.com/Disfactory">
               https://github.com/Disfactory
             </a>
@@ -114,12 +115,12 @@ ul ul {
 
               <ul>
                 <li>
-                  Disfactory
+                  Disfactory{" "}
                   <a href="https://github.com/Disfactory/Disfactory">backend</a>
                 </li>
 
                 <li>
-                  Disfactory
+                  Disfactory{" "}
                   <a href="https://github.com/Disfactory/frontend">frontend</a>
                 </li>
               </ul>
@@ -128,7 +129,7 @@ ul ul {
 
               <ul>
                 <li>
-                  <a href="https://github.com/Disfactory/SpotDiff">SpotDiff</a>
+                  <a href="https://github.com/Disfactory/SpotDiff">SpotDiff</a>{" "}
                   backend (All English)
                 </li>
 
@@ -142,14 +143,14 @@ ul ul {
           </li>
 
           <li>
-            Figma:
+            Figma:{" "}
             <a href="https://www.figma.com/file/dFuJKpdDcmHNDqdj1011Zo/Disfactory_UI_design_2021?node-id=0%3A1">
               https://www.figma.com/file/dFuJKpdDcmHNDqdj1011Zo/Disfactory_UI_design_2021?node-id=0%3A1
             </a>
           </li>
 
           <li>
-            Collaborative notes (Mandarin):
+            Collaborative notes (Mandarin):{" "}
             <a href="https://g0v.hackmd.io/@disfactory/home">
               https://g0v.hackmd.io/@disfactory/home
             </a>
@@ -160,7 +161,7 @@ ul ul {
 
         <ul>
           <li>
-            Disfactory collaboration model
+            Disfactory collaboration model{" "}
             <a href="https://youtu.be/Q0A6MbP3a0w">
               https://youtu.be/Q0A6MbP3a0w
             </a>
@@ -168,21 +169,21 @@ ul ul {
 
           <li>
             Disfactory project building, sharing with activists in Southeast
-            Asia and Oceania
+            Asia and Oceania{" "}
             <a href="https://docs.google.com/presentation/d/1hB2CULtytz2sUAI6ld2j9qdM11SJcorWFb8dFwJwixA/edit">
               https://docs.google.com/presentation/d/1hB2CULtytz2sUAI6ld2j9qdM11SJcorWFb8dFwJwixA/edit
             </a>
           </li>
 
           <li>
-            20221018_ Innovation for Democracy Café
+            20221018_ Innovation for Democracy Café{" "}
             <a href="https://docs.google.com/presentation/d/1bb_2ODwZjOCG1_W_DMOeY4PYh6IsUTnt/edit#slide=id.g16c5d42de50_0_24">
               https://docs.google.com/presentation/d/1bb_2ODwZjOCG1_W_DMOeY4PYh6IsUTnt/edit#slide=id.g16c5d42de50_0_24
             </a>
           </li>
 
           <li>
-            20220806_Pollution and Tech Activism
+            20220806_Pollution and Tech Activism{" "}
             <a href="https://docs.google.com/presentation/d/1tmUL0GBw2ERUdU-TgU_KXA64jvMp9dys/edit#slide=id.p1">
               https://docs.google.com/presentation/d/1tmUL0GBw2ERUdU-TgU_KXA64jvMp9dys/edit#slide=id.p1
             </a>
