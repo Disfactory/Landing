@@ -2,17 +2,27 @@ const ContributorInfo = [
   {
     id: 'frontend',
     type: '前端',
-    name: 'IU、yukai、yeefun、dotsea、Caleb',
+    name: 'IU、yukai、yeefun、dotsea、Caleb、二路、KuoMin',
   },
   {
     id: 'design',
     type: '設計',
-    name: 'SL、J、Tin、Lydia、Xinroo、RAY',
+    name: 'SL、J、Tin、Lydia、Xinroo、RAY、ryno',
   },
   {
     id: 'backend',
     type: '後端',
-    name: 'cph、yellowsoar、swind、小白、YAlgorithm、sour、Jsaon、Toby、 Sonia、Andy、Hubert、Darren、Looofy、Simon、Aaron',
+    name: 'cph、yellowsoar、swind、小白、YAlgorithm、sour、Jsaon、Toby、 Sonia、Andy、Hubert、Darren、Looofy、Simon、Aaron、steven、ifengc、kai wang、tuo',
+  },
+  {
+    id: 'gis',
+    type: '圖資/GIS',
+    name: 'chewei、ronnywang、bdon、pm5、kiang、shupo、karen',
+  },
+  {
+    id: 'pm',
+    type: 'PM',
+    name: 'ael',
   },
   {
     id: 'ngo',
@@ -22,7 +32,7 @@ const ContributorInfo = [
   {
     id: 'socialmedia',
     type: '社群協力',
-    name: 'ddio、chiahe、Joycelin、laiTzan、chelin、jenhaoyang、chihao、Angel、安東尼、Bryce、笑笑、積丹尼、誠夏、Stasia、慈忻、Kai、昱伶、Tai、Wuulong、Carmen、fly、土撥鼠、mhshih、JinWen、Johnson、John Huang、zyan、tai、slayer、mg、robin、星穎、ichieh、isabel、Tiff、雅安、Jay Lo、mcdlee、CRW、Guo-Jim',
+    name: 'ddio、chiahe、Joycelin、laiTzan、chelin、jenhaoyang、chihao、Angel、安東尼、Bryce、笑笑、積丹尼、誠夏、Stasia、慈忻、Kai、昱伶、Tai、Wuulong、Carmen、fly、土撥鼠、mhshih、JinWen、Johnson、John Huang、zyan、tai、slayer、mg、robin、星穎、ichieh、isabel、Tiff、雅安、Jay Lo、mcdlee、CRW、Guo-Jim、sarah',
   },
 ];
 
