@@ -15,8 +15,7 @@ const HowToUseInfo = [
   {
     id: '03',
     title: '地方政府',
-    description:
-      '到現場檢查違規實情 依法進行斷水斷電、勒令停工等處置 遊玩大家來找廠',
+    description: '到現場檢查違規實情 依法進行斷水斷電、勒令停工等處置',
     image: 'how-to-use-gov.svg',
   },
 ];
