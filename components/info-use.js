@@ -7,7 +7,7 @@ const InfoContainer = styled.div`
   max-width: 1200px;
   margin: auto;
   padding: 75px 60px 100px;
-  outline: 1px solid #000000;
+  background: #fffee4;
 
   .info-list-group {
     margin-bottom: 50px;
@@ -51,6 +51,10 @@ const InfoBox = styled.div`
     text-align: center;
     letter-spacing: 0.855px;
     color: #000000;
+
+    ${({ theme }) => theme.breakpoint.md} {
+      padding: 0px 50px;
+    }
   }
 `;
 
