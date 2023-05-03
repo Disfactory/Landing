@@ -18,7 +18,7 @@ const BodyContainer = styled.div`
     justify-content: center;
     color: ${({ theme }) => theme.textColor.gray};
     margin: 0px auto 30px;
-    max-width: 270px;
+    max-width: 450px;
   }
 `;
 

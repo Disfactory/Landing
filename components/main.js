@@ -16,6 +16,7 @@ import Canvas from './canvas';
 import { PublicShare } from '~/constants/public-share';
 import { NewsShare } from '~/constants/news-share';
 import { QAtoggleInfo } from '../constants/QA-toggle';
+import AboutUs from '~/components/about-us';
 
 const ContentContainer = styled.div`
   width: 100%;
@@ -89,11 +90,12 @@ export default function Main() {
           <ActionChange />
         </SectionBody>
 
-        {/* 文字資料尚未補齊，先暫時註解 */}
-        {/* <SectionBody
+        <SectionBody
           title={'我們是誰？'}
           subtitle={'來自四面八方，卻有著同樣使命'}
-        ></SectionBody> */}
+        >
+          <AboutUs />
+        </SectionBody>
 
         <SectionBody title={'聽聽他們怎麼說'}>
           <Carousel data={PublicShare} type='public' />
