@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 import styled from 'styled-components';
 import { MenuItems } from '~/constants/nav';
 
@@ -128,9 +129,9 @@ export default function Nav() {
         >
           鍵盤參與
         </a>
-        <a href='https://about.disfactory.tw/en/' target='_blank'>
+        <Link href='/en'>
           English
-        </a>
+        </Link>
       </MenuBar>
     </NavContainer>
   );
