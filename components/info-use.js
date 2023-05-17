@@ -71,13 +71,13 @@ const StepList = styled.div`
   padding: 0px 30px;
 
   .title {
+    letter-spacing: 0.855px;
+    color: #000000;
+    margin-bottom: 30px;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
-    letter-spacing: 0.855px;
-    color: #000000;
-    margin-bottom: 30px;
   }
 
   .desc {

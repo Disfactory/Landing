@@ -15,7 +15,6 @@ const ToggleContainer = styled.div`
   }
 `;
 
-// props: data={item} order={index} key={item.id}
 export default function ToggleItem(props) {
   const [isActive, setIsActive] = useState(false);
   return (
