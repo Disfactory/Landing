@@ -1,71 +1,32 @@
 import React from 'react';
-import styled from 'styled-components';
 import classNames from 'classnames';
+import QA01 from '~/components/QA/qa_01';
+import QA02 from '~/components/QA/qa_02';
+import QA03 from '~/components/QA/qa_03';
+import QA04 from '~/components/QA/qa_04';
 
-const Container = styled.div`
-  .noShow {
-    display: none;
-  }
-
-  .question-mark {
-    align-items: center;
-    background-color: #eaf3bf;
-    border-radius: 50%;
-    display: flex;
-    flex-shrink: 0;
-    height: 45px;
-    justify-content: center;
-    margin-right: 24px;
-    width: 45px;
-    font-weight: 700;
-    color: #697f01;
-    font-size: 20px;
-  }
-
-  .question-content {
-    padding-top: 10px;
-  }
-`;
-
-const BodyItem = styled.div`
-  width: 90%;
-  background: #fff9e6;
-  border-radius: 8px;
-  padding: 22px 30px;
-  display: flex;
-  margin: 0 auto 15px auto;
-  letter-spacing: 0.1ch;
-
-  h4 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    font-weight: 600;
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 1.8;
-    font-weight: 300;
-  }
-`;
-
-export default function ToggleTitle(props) {
+export default function ToggleBody(props) {
   const style = classNames({ noShow: !props.show });
 
-  const answerLists = props.data.answer.map((item) => {
-    return (
-      <BodyItem key={item.id}>
-        <div className='question-mark'>Ｑ</div>
-        <div className='question-content'>
-          <h4> {item.title} </h4>
-          <p dangerouslySetInnerHTML={{ __html: item.desc }}></p>
-        </div>
-      </BodyItem>
-    );
-  });
-  return (
-    <Container>
-      <div className={style}>{answerLists}</div>
-    </Container>
-  );
+  let toggleBody = null;
+
+  switch (props?.data?.id) {
+    case '01':
+      toggleBody = <QA01 style={style} />;
+      break;
+    case '02':
+      toggleBody = <QA02 style={style} />;
+      break;
+    case '03':
+      toggleBody = <QA03 style={style} />;
+      break;
+    case '04':
+      toggleBody = <QA04 style={style} />;
+      break;
+    default:
+      toggleBody = null;
+      break;
+  }
+
+  return <>{toggleBody}</>;
 }

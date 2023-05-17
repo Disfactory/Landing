@@ -8,19 +8,23 @@ import SectionBody from '~/components/section-body';
 import ActionChange from '~/components/action-change';
 import InfoUse from '~/components/info-use';
 import Carousel from '~/components/carousel';
-import ToggleList from '~/components/toggle-list';
 import Tool from '~/components/tool';
 import Forehead from '~/components/forehead';
 import Header from '~/components/header';
 import Canvas from './canvas';
 import { PublicShare } from '~/constants/public-share';
 import { NewsShare } from '~/constants/news-share';
-import { QAtoggleInfo } from '../constants/QA-toggle';
 import AboutUs from '~/components/about-us';
+import QA from '~/components/qa';
 
 const ContentContainer = styled.div`
   width: 100%;
   padding-top: 60px;
+
+  > span {
+    display: block;
+    margin-bottom: 50px;
+  }
 
   p {
     font-family: var(--raleway-font);
@@ -34,10 +38,6 @@ const ContentContainer = styled.div`
     }
   }
 `;
-
-const toggleLists = QAtoggleInfo.map((item, index) => {
-  return <ToggleList data={item} order={index} key={item.id} />;
-});
 
 export default function Main() {
   // const [data, setData] = useState('');
@@ -102,7 +102,9 @@ export default function Main() {
         </SectionBody>
 
         <span id='question'></span>
-        <SectionBody title={'常見問題'}>{toggleLists}</SectionBody>
+        <SectionBody title={'常見問題'}>
+          <QA />
+        </SectionBody>
 
         <span id='news'></span>
         <SectionBody title={'想深入農地工廠議題，或瀏覽專案相關報導嗎？'}>
