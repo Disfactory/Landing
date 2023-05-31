@@ -44,6 +44,10 @@ const BodyItem = styled.div`
   margin: 0 auto 15px auto;
   letter-spacing: 0.1ch;
 
+  ${({ theme }) => theme.breakpoint.md} {
+    margin: 0 auto 15px auto;
+  }
+
   h4 {
     font-size: 20px;
     margin-bottom: 15px;
@@ -109,9 +113,6 @@ const LightBox = styled.div`
   height: 82%;
   background-color: white;
   border-radius: 20px;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: flex-end; */
   padding: 20px;
 
   img {
@@ -124,6 +125,7 @@ const LightBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
   }
 
   .swiper-button-next,
@@ -147,6 +149,7 @@ const CloseIcon = styled.div`
   margin-right: 0;
   display: flex;
   justify-content: flex-end;
+  user-select: none;
 
   img {
     width: 25px;

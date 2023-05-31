@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BodyContainer = styled.div`
-  padding: 55px 20px 0px;
+  padding: 55px 20px 10px;
   text-align: center;
   background: ${(props) => (props.color ? props.color : '#ffffff')};
   .title {
