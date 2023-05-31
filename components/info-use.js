@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { HowToUseInfo, HowToUseStepInfo } from '../constants/how-to-use';
 
 const InfoContainer = styled.div`
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 75px 60px 100px;
+  padding: 45px 25px 100px;
   background: #fffee4;
 
   .info-list-group {
@@ -18,6 +18,9 @@ const InfoContainer = styled.div`
   }
 
   ${({ theme }) => theme.breakpoint.md} {
+    width: 90%;
+    padding: 75px 60px 100px;
+
     .step-list-group {
       display: flex;
     }
@@ -30,6 +33,7 @@ const InfoBox = styled.div`
   border-radius: 18px;
   margin-bottom: 45px;
   max-width: 600px;
+  text-align: left;
 
   p {
     font-weight: 700;
@@ -53,6 +57,7 @@ const InfoBox = styled.div`
     color: #000000;
 
     ${({ theme }) => theme.breakpoint.md} {
+      text-align: center;
       padding: 0px 50px;
     }
   }
@@ -67,8 +72,12 @@ const StepList = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px auto;
+  margin: 30px auto;
   padding: 0px 30px;
+
+  ${({ theme }) => theme.breakpoint.md} {
+    margin: 10px auto;
+  }
 
   .title {
     letter-spacing: 0.855px;
@@ -92,8 +101,7 @@ const StepList = styled.div`
 `;
 
 const InfoList = styled.li`
-  display: flex;
-  align-items: center;
+  display: block;
   list-style: none;
   margin-bottom: 15px;
 
@@ -107,6 +115,12 @@ const InfoList = styled.li`
 
   > div:nth-child(odd) {
     background: #e2ebf4;
+  }
+
+  ${({ theme }) => theme.breakpoint.md} {
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
   }
 `;
 

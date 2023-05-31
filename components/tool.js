@@ -13,6 +13,15 @@ const ToolContainer = styled.div`
 `;
 const ToolBox = styled.div`
   margin-bottom: 80px;
+
+  .tool-box-image {
+    width: 100%;
+    height: 195px;
+    max-width: 305px;
+    position: relative;
+    margin: auto;
+  }
+
   ${({ theme }) => theme.breakpoint.xl} {
     width: 50%;
     margin-bottom: 100px;
@@ -54,7 +63,8 @@ const Description = styled.div`
 const ToolList = styled.ul`
   margin: auto;
   margin-bottom: 40px;
-  width: 25%;
+  width: 280px;
+
   li {
     color: ${(props) => props.color || '#ffffff'};
     ${({ theme }) => theme.fontSize['normal']};
@@ -78,7 +88,8 @@ const ToolList = styled.ul`
   }
 
   ${({ theme }) => theme.breakpoint.xl} {
-    width: 60%;
+    width: 360px;
+
     li {
       ${({ theme }) => theme.fontSize['normal-xl']};
       max-width: none;
@@ -109,12 +120,14 @@ export default function Tool() {
             <Title color={toolItem.color} bgColor={toolItem.bgColor}>
               {toolItem.title}
             </Title>
-            <Image
-              src={toolItem.image}
-              alt={toolItem.title}
-              width={300}
-              height={200}
-            ></Image>
+            <div className='tool-box-image'>
+              <Image
+                src={toolItem.image}
+                alt={toolItem.title}
+                fill
+                sizes='100%'
+              />
+            </div>
             <Description>{toolItem.description}</Description>
             <ToolList color={toolItem.color} bgColor={toolItem.bgColor}>
               <li>
