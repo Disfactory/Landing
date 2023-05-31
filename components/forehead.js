@@ -24,7 +24,8 @@ const TitleContainer = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
+  margin-bottom: 70px;
 
   .title {
     max-width: 200px;
@@ -100,22 +101,33 @@ const Description = styled.div`
   line-height: 1.8;
 
   .intro {
-    display: flex;
-    align-items: center;
     margin-bottom: 30px;
 
     &:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    picture {
-      margin: 0 20px;
+      flex-direction: row;
     }
 
     img {
-      width: 120px;
-      display: inline-block;
-      margin: auto;
+      margin: 0 auto 15px auto;
+      width: 180px;
+      display: block;
+    }
+
+    ${({ theme }) => theme.breakpoint.sm} {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+
+      img {
+        margin: 0 20px 15px 20px;
+        width: 120px;
+      }
+    }
+
+    ${({ theme }) => theme.breakpoint.md} {
+      img {
+        margin: 0 10px 0 10px;
+      }
     }
 
     ${({ theme }) => theme.breakpoint.lg} {
@@ -126,6 +138,7 @@ const Description = styled.div`
   }
 
   ${({ theme }) => theme.breakpoint.md} {
+    padding: 0px 15px;
     width: 70%;
   }
 
@@ -137,10 +150,8 @@ const Description = styled.div`
 const foreheadItems = ForeheadInfo.map((foreheadItem) => {
   return (
     <div key={foreheadItem.id} className='intro'>
+      <img src={`/images/${foreheadItem.image}`}></img>
       <p key={foreheadItem.id}>{foreheadItem.paragraph}</p>
-      <picture>
-        <img src={`/images/${foreheadItem.image}`}></img>
-      </picture>
     </div>
   );
 });
