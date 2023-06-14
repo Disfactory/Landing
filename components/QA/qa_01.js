@@ -72,6 +72,7 @@ const BodyItem = styled.div`
     border-bottom: 1px solid #457287;
     font-weight: 600;
     padding-bottom: 2px;
+    margin: 0px 1px;
 
     &:hover {
       color: #2b4754;
@@ -285,7 +286,13 @@ export default function QA01({ style }) {
                 >
                   如何在一筆資料裡補充更多資訊？
                 </button>
-                <p>如有其他問題，請電洽地球公民基金會（02-23920371）。</p>
+                <p>
+                  如有其他問題，請電洽
+                  <a href='https://www.cet-taiwan.org/' target='_blank'>
+                    地球公民基金會
+                  </a>
+                  （02-23920371） 。
+                </p>
               </div>
             </div>
           </BodyItem>
@@ -307,11 +314,22 @@ export default function QA01({ style }) {
               <h4>我的回報是否匿名？</h4>
               <div>
                 <p>
-                  傳統的檢舉需要留下個人資料，且程序複雜。在 Disfactory.tw
+                  傳統的檢舉需要留下個人資料，且程序複雜。在
+                  <a
+                    href='https://disfactory.tw/#map=13.33/120.48045837182302/24.082781532625603'
+                    target='_blank'
+                  >
+                    違章工廠回報系統
+                  </a>
                   中，民眾可以選擇不填寫真實姓名，或不留下個人資訊，即可回報！
                 </p>
                 <p>
-                  Disfactory.tw
+                  <a
+                    href='https://disfactory.tw/#map=13.33/120.48045837182302/24.082781532625603'
+                    target='_blank'
+                  >
+                    違章工廠回報系統
+                  </a>
                   會保障報案民眾的個人資訊，不必擔心個人資料被洩露。
                 </p>
               </div>

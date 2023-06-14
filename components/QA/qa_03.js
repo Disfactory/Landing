@@ -59,6 +59,7 @@ const BodyItem = styled.div`
     border-bottom: 1px solid #457287;
     font-weight: 600;
     padding-bottom: 2px;
+    margin: 0px 1px;
 
     &:hover {
       color: #2b4754;
@@ -101,7 +102,12 @@ export default function QA03({ style }) {
             <h4>回報就會變檢舉嗎？</h4>
             <div>
               <p>
-                Disfactory.tw
+                <a
+                  href='https://disfactory.tw/#map=13.33/120.48045837182302/24.082781532625603'
+                  target='_blank'
+                >
+                  違章工廠回報系統
+                </a>
                 是協助民眾回報違章工廠的平台，上傳回報並不代表已經完成舉報程序。
               </p>
               <p>
