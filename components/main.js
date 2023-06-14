@@ -83,14 +83,13 @@ export default function Main() {
           <InfoUse />
         </SectionBody>
 
-        {/* TODO: API尚未建置完成，暫時先註解 */}
-        {/* <span id='result'></span> */}
-        {/* <SectionBody
+        <span id='result'></span>
+        <SectionBody
           title={'小小行動，大大改變'}
           subtitle={'這幾年我們使用工具，讓違章工廠無所遁形！'}
         >
           <ActionChange />
-        </SectionBody> */}
+        </SectionBody>
 
         <SectionBody
           title={'我們是誰？'}
