@@ -19,10 +19,18 @@ const TitleContainer = styled.div`
   .circle {
     width: 34px;
     height: 34px;
-    outline: 2px solid #697f01;
-    border-radius: 50%;
+    border-radius: 17px;
     margin-right: 20px;
     text-align: center;
+    border-radius: 50%;
+    border: 2px solid #697f01;
+    font-size: 28px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    padding-left: 2px;
   }
 
   ${({ theme }) => theme.breakpoint.md} {
@@ -45,7 +53,10 @@ export default function ToggleTitle(props) {
 
   return (
     <TitleContainer onClick={toggle}>
-      <div className='circle'>{toggleIcon}</div>
+      <div className='circle'>
+        {toggleIcon}
+        {/* <p>{toggleIcon}</p> */}
+      </div>
       <div className={toggleClass}>{props.data.question}</div>
     </TitleContainer>
   );
