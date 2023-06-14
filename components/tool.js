@@ -29,17 +29,24 @@ const ToolBox = styled.div`
 `;
 
 const Title = styled.div`
-  ${({ theme }) => theme.fontSize['title-main-sm']};
+  font-size: 25px;
+  font-weight: 700;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  padding: 10px;
+  padding: 15px;
   color: ${(props) => props.color || '#ffffff'};
   background: ${(props) => props.bgColor || '#ffffff'};
   width: 100%;
   margin: auto auto 35px auto;
   max-width: 500px;
+
+  ${({ theme }) => theme.breakpoint.md} {
+    ${({ theme }) => theme.fontSize['title-main-sm']};
+    padding: 10px;
+  }
+
   ${({ theme }) => theme.breakpoint.xl} {
     padding: 20px;
     margin: auto auto 45px auto;

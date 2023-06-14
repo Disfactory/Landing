@@ -1,0 +1,19 @@
+{
+  "name": "2023-Disfactory",
+  "short_name": "Disfactory",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#6D8502",
+  "icons": [
+    {
+      "src": "/images/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

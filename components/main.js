@@ -62,7 +62,7 @@ export default function Main() {
       <ContentContainer>
         <Header
           title={'農地違章工廠回報系統'}
-          subtitle={'by一群想用科技工具改變政府的下班族'}
+          subtitle={'by 一群想用科技工具改變政府的下班族'}
         />
         <Forehead
           title={'對的事，再難也要做！'}
@@ -82,13 +82,14 @@ export default function Main() {
           <InfoUse />
         </SectionBody>
 
-        <span id='result'></span>
-        <SectionBody
+        {/* TODO: API尚未建置完成，暫時先註解 */}
+        {/* <span id='result'></span> */}
+        {/* <SectionBody
           title={'小小行動，大大改變'}
           subtitle={'這幾年我們使用工具，讓違章工廠無所遁形！'}
         >
           <ActionChange />
-        </SectionBody>
+        </SectionBody> */}
 
         <SectionBody
           title={'我們是誰？'}

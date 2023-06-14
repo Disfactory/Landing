@@ -27,6 +27,7 @@ export const theme = {
     white: '#FFFFFF',
   },
   fontSize: {
+    'title-main-xs': 'font-size:28px; line-height: 1.5; font-weight: 700;',
     'title-main-sm': 'font-size:32px; line-height: 1.5; font-weight: 700;',
     'title-main-md': 'font-size:38px; line-height: 1.5; font-weight: 700;',
     'subtitle-sm': 'font-size:22px; line-height: 1.8; font-weight: 400;',
