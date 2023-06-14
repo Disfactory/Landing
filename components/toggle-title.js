@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TitleContainer = styled.div`
   width: 100%;
-  padding: 20px;
+  padding: 15px 20px;
   background: #eaf3bf;
   font-weight: 700;
   font-size: 24px;
@@ -23,6 +23,10 @@ const TitleContainer = styled.div`
     border-radius: 50%;
     margin-right: 20px;
     text-align: center;
+  }
+
+  ${({ theme }) => theme.breakpoint.md} {
+    padding: 20px;
   }
 `;
 

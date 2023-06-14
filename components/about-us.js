@@ -5,7 +5,7 @@ const AboutUsContainer = styled.div`
   width: 90%;
   max-width: 1000px;
   margin: auto;
-  padding: 20px 30px 50px;
+  padding: 20px 5px 50px;
   text-align: justify;
 
   p {
@@ -19,7 +19,7 @@ const AboutUsContainer = styled.div`
   }
 
   ${({ theme }) => theme.breakpoint.md} {
-    padding: 20px 60px 50px;
+    padding: 20px 45px 50px;
   }
 `;
 

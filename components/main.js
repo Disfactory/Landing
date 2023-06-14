@@ -16,6 +16,7 @@ import { PublicShare } from '~/constants/public-share';
 import { NewsShare } from '~/constants/news-share';
 import AboutUs from '~/components/about-us';
 import QA from '~/components/qa';
+import MobileCarousel from './mobile-carousel';
 
 const ContentContainer = styled.div`
   width: 100%;
@@ -99,6 +100,7 @@ export default function Main() {
         </SectionBody>
 
         <SectionBody title={'聽聽他們怎麼說'}>
+          <MobileCarousel data={PublicShare} type='public' />
           <Carousel data={PublicShare} type='public' />
         </SectionBody>
 
@@ -109,6 +111,7 @@ export default function Main() {
 
         <span id='news'></span>
         <SectionBody title={'想深入農地工廠議題，或瀏覽專案相關報導嗎？'}>
+          <MobileCarousel data={NewsShare} type='news' />
           <Carousel data={NewsShare} type='news' />
         </SectionBody>
         <div className='scratch-canvas'>

@@ -7,20 +7,24 @@ const Container = styled.div`
   }
 
   .question-mark {
-    align-items: center;
-    background-color: #eaf3bf;
-    border-radius: 50%;
-    display: flex;
-    flex-shrink: 0;
-    height: 45px;
-    justify-content: center;
-    margin-right: 24px;
-    width: 45px;
-    font-weight: 700;
-    color: #697f01;
-    font-size: 20px;
-  }
+    display: none;
 
+    ${({ theme }) => theme.breakpoint.sm} {
+      display: block;
+      align-items: center;
+      background-color: #eaf3bf;
+      border-radius: 50%;
+      display: flex;
+      flex-shrink: 0;
+      height: 45px;
+      justify-content: center;
+      margin-right: 24px;
+      width: 45px;
+      font-weight: 700;
+      color: #697f01;
+      font-size: 20px;
+    }
+  }
   .question-content {
     padding-top: 10px;
   }
@@ -39,6 +43,7 @@ const BodyItem = styled.div`
     font-size: 20px;
     margin-bottom: 15px;
     font-weight: 600;
+    line-height: 1.5;
   }
 
   p {
