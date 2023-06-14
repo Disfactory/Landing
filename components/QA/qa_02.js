@@ -134,26 +134,31 @@ export default function QA02({ style }) {
         <BodyItem>
           <div className='question-mark'>Ｑ</div>
           <div className='question-content'>
-            <h4>我的回報是否匿名？</h4>
+            <h4> 我想回報的工廠不在範圍內</h4>
             <div>
               <p>
-                傳統的檢舉需要留下個人資料，且程序複雜。在
+                目前
                 <a
                   href='https://disfactory.tw/#map=13.33/120.48045837182302/24.082781532625603'
                   target='_blank'
                 >
                   違章工廠回報系統
                 </a>
-                中，民眾可以選擇不填寫真實姓名，或不留下個人資訊，即可回報！
+                主要針對非都市土地上的新增建違章工廠進行回報，因為在都市計畫農業區的土地上，建築物與土地利用都受到較嚴格的管制，也有較高的査處效能。
               </p>
               <p>
+                如果您想回報的違章工廠不在
                 <a
                   href='https://disfactory.tw/#map=13.33/120.48045837182302/24.082781532625603'
                   target='_blank'
                 >
                   違章工廠回報系統
                 </a>
-                會保障報案民眾的個人資訊，不必擔心個人資料被洩露。
+                的回報範圍內，可以寫信至
+                <a href='https://www.cet-taiwan.org/' target='_blank'>
+                  地球公民基金會
+                </a>
+                (cet@cet-taiwan.org)，我們會盡快協助處理。
               </p>
             </div>
           </div>
