@@ -110,6 +110,11 @@ const ToolButton = styled.a`
   border-radius: 34px;
   padding: 15px 30px;
   color: ${({ theme }) => theme.textColor.white};
+
+  &:hover {
+    opacity: 0.9;
+  }
+
   ${({ theme }) => theme.fontSize['title-sub']};
   cursor: pointer;
   display: inline-block;
@@ -150,7 +155,11 @@ export default function Tool() {
                 {toolItem.list3}
               </li>
             </ToolList>
-            <ToolButton href={toolItem.link} buttonColor={toolItem.buttonColor}>
+            <ToolButton
+              href={toolItem.link}
+              buttonColor={toolItem.buttonColor}
+              target='_blank'
+            >
               {toolItem.button}
             </ToolButton>
           </ToolBox>
