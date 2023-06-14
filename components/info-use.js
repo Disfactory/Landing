@@ -6,7 +6,6 @@ const InfoContainer = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 45px 25px 100px;
   background: #fffee4;
 
   .info-list-group {
@@ -15,25 +14,32 @@ const InfoContainer = styled.div`
 
   .step-list-group {
     margin: auto;
+    padding-bottom: 10px;
   }
 
   ${({ theme }) => theme.breakpoint.md} {
     width: 90%;
-    padding: 75px 60px 100px;
+    padding: 45px 25px 100px;
 
     .step-list-group {
       display: flex;
+      padding-bottom: 10px;
+      justify-content: center;
     }
   }
 `;
 
 const InfoBox = styled.div`
-  padding: 20px 25px;
+  padding: 20px;
   background: #eaf3bf;
   border-radius: 18px;
-  margin-bottom: 45px;
   max-width: 600px;
   text-align: left;
+  margin: 0px 20px 45px 20px;
+
+  ${({ theme }) => theme.breakpoint.xl} {
+    margin: 0px 15px auto 15px;
+  }
 
   p {
     font-weight: 700;
@@ -41,24 +47,31 @@ const InfoBox = styled.div`
     line-height: 30px;
     letter-spacing: 0.855px;
     color: #2b4754;
-    text-align: left;
+    text-align: center;
     margin-bottom: 10px;
+
+    ${({ theme }) => theme.breakpoint.md} {
+      text-align: left;
+    }
   }
 
   span {
     text-align: center;
     font-weight: 400;
-    font-size: 22px;
-    line-height: 33px;
+    font-size: 18px;
+    line-height: 1.6;
     display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: 0.855px;
     color: #000000;
+    text-align: left;
 
-    ${({ theme }) => theme.breakpoint.md} {
-      text-align: center;
-      padding: 0px 50px;
+    ${({ theme }) => theme.breakpoint.sm} {
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      text-align: left;
+      line-height: 33px;
     }
   }
 `;
@@ -73,10 +86,10 @@ const StepList = styled.div`
   align-items: center;
   justify-content: center;
   margin: 30px auto;
-  padding: 0px 30px;
+  padding: 0px 20px;
 
   ${({ theme }) => theme.breakpoint.md} {
-    margin: 10px auto;
+    margin: 10px;
   }
 
   .title {
@@ -121,6 +134,11 @@ const InfoList = styled.li`
     display: flex;
     align-items: center;
     padding: 0px 50px;
+  }
+
+  picture {
+    margin-bottom: 15px;
+    display: inline-block;
   }
 `;
 

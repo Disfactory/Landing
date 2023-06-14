@@ -15,9 +15,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const SwiperContainer = styled.div`
-  margin: auto;
-  position: relative;
-  max-width: 550px;
+  display: none;
+
+  ${({ theme }) => theme.breakpoint.sm} {
+    display: block;
+    margin: auto;
+    position: relative;
+    max-width: 550px;
+  }
 
   ${({ theme }) => theme.breakpoint.md} {
     max-width: 900px;
@@ -41,6 +46,14 @@ const SwiperContainer = styled.div`
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     padding: 35px 22px 10px 22px;
+
+    /* .name {
+      font-size: 20px;
+    }
+
+    .intro {
+      display: none;
+    } */
 
     ${({ theme }) => theme.breakpoint.xl} {
       min-width: 260px;
@@ -88,7 +101,17 @@ const SwiperContainer = styled.div`
   }
 `;
 
+const MobileWrapper = styled.div``;
+
 export default function Carousel({ data = [], type = 'public' }) {
+  const MobileImages = data.map((item) => {
+    return (
+      <MobileWrapper className='swiperItem' key={item.id}>
+        <PublicCard data={item} />
+      </MobileWrapper>
+    );
+  });
+
   return (
     <>
       <SwiperContainer>
