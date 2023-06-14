@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { ActionChangeInfo } from '../constants/action-change';
 
 const ListContainer = styled.div`
-  width: 80%;
-  max-width: 1000px;
+  width: 90%;
   margin: auto;
   text-align: center;
-
+  overflow: hidden;
+  max-width: 900px;
   a {
     text-decoration: underline;
     color: #979797;
@@ -35,6 +34,9 @@ const ListContainer = styled.div`
 const ListWrap = styled.div`
   width: 100%;
   margin-bottom: 50px;
+  margin: 0px auto;
+  overflow: hidden;
+  gap: 20px;
 
   ${({ theme }) => theme.breakpoint.md} {
     display: flex;
@@ -44,9 +46,10 @@ const ListWrap = styled.div`
 `;
 
 const ActionList = styled.div`
-  width: 300px;
-  margin: auto auto 50px auto;
+  width: 100%;
+  max-width: 250px;
   text-align: center;
+  margin: 10px auto 60px;
 
   .amount {
     font-weight: 700;
@@ -54,7 +57,6 @@ const ActionList = styled.div`
     line-height: 100%;
     text-align: center;
     color: #fa6b62;
-    /* font-family: 'Noto Sans CJK TC'; */
     margin: 15px auto;
   }
 
@@ -67,25 +69,48 @@ const ActionList = styled.div`
     color: #333333;
   }
 
-  ${({ theme }) => theme.breakpoint.md} {
+  /* ${({ theme }) => theme.breakpoint.md} {
     margin: 0px 20px;
-  }
+  } */
 `;
 
-const actionList = ActionChangeInfo.map((item) => {
-  return (
-    <ActionList key={item.id}>
-      <img src={item.image} alt=''></img>
-      <h2 className='amount'>{item.amount}</h2>
-      <p className='notion'>{item.notion}</p>
-    </ActionList>
-  );
-});
-
 export default function ActionChange() {
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch('/api/action-change')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <ListContainer>
-      <ListWrap>{actionList}</ListWrap>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <ListWrap>
+          <ActionList>
+            <img src='/images/action1.svg' alt=''></img>
+            {data && <h2 className='amount'>{data.report_records}</h2>}
+            <p className='notion'>累積回報人次</p>
+          </ActionList>
+          <ActionList>
+            <img src='/images/action2.svg' alt=''></img>
+            {data && <h2 className='amount'>{data.documents}</h2>}
+            <p className='notion'>累積申訴公文</p>
+          </ActionList>
+          <ActionList>
+            <img src='/images/action3.svg' alt=''></img>
+            {data && <h2 className='amount'>{data.factories}</h2>}
+            <p className='notion'>間被裁罰工廠</p>
+          </ActionList>
+        </ListWrap>
+      )}
       <p>
         資料來源｜總工廠數：
         <a href='https://map.coa.gov.tw/farmland/survey.html' target='_blank'>
