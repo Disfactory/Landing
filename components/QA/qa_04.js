@@ -58,6 +58,7 @@ const BodyItem = styled.div`
     border-bottom: 1px solid #457287;
     font-weight: 600;
     padding-bottom: 2px;
+    margin: 0px 1px;
 
     &:hover {
       color: #2b4754;
@@ -100,7 +101,11 @@ export default function QA04({ style }) {
             <h4>請求撤銷照片</h4>
             <div>
               <p>
-                如有誤上傳含有個人資料的照片，請記住您回報的工廠編號，並電洽地球公民基金會（02-23920371），請求撤下照片。
+                如有誤上傳含有個人資料的照片，請記住您回報的工廠編號，並電洽
+                <a href='https://www.cet-taiwan.org/' target='_blank'>
+                  地球公民基金會
+                </a>
+                （02-23920371），請求撤下照片。
               </p>
             </div>
           </div>
