@@ -1,7 +1,8 @@
-import React from 'react';
-import Link from 'next/link'
+import React, { useState } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { MenuItems } from '~/constants/nav';
+import SidebarMenu from '~/components/layout/sidebar';
 
 const NavContainer = styled.div`
   position: fixed;
@@ -12,7 +13,7 @@ const NavContainer = styled.div`
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
   height: 60px;
-  padding: 0px 40px;
+  padding: 0px 10px 0px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,13 +101,50 @@ const MenuBar = styled.ul`
   }
 `;
 
+const SideBar = styled.button`
+  display: block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .sidebar-hamburger {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background: #eaf3bf;
+    cursor: pointer;
+  }
+
+  ${({ theme }) => theme.breakpoint.xl} {
+    display: none;
+  }
+`;
+
 export default function Nav() {
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <NavContainer>
       <Logo>
         <img src='/images/icons/logo.svg' alt='LOGO' />
         <p>農地工廠</p>
       </Logo>
+      <SideBar>
+        <img
+          src='/images/nav-sidebar-hamburger.svg'
+          onClick={() => {
+            setShowMenu(!showMenu);
+          }}
+        />
+        {showMenu && (
+          <SidebarMenu setShowMenu={setShowMenu} showMenu={showMenu} />
+        )}
+      </SideBar>
       <MenuBar>
         {MenuItems.map((item) => {
           return (
@@ -129,9 +167,7 @@ export default function Nav() {
         >
           鍵盤參與
         </a>
-        <Link href='/en'>
-          English
-        </Link>
+        <Link href='/en'>English</Link>
       </MenuBar>
     </NavContainer>
   );

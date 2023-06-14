@@ -7,18 +7,30 @@ const BodyContainer = styled.div`
   background: ${(props) => (props.color ? props.color : '#ffffff')};
   .title {
     font-weight: 700;
-    ${({ theme }) => theme.fontSize['title-main-sm']};
+    line-height: 1.5;
+    ${({ theme }) => theme.fontSize['title-main-xs']};
     color: ${({ theme }) => theme.textColor.darkGreen};
     margin-bottom: 15px;
   }
   .subtitle {
-    ${({ theme }) => theme.fontSize['subtitle-sm']};
+    font-size: 18px;
+    line-height: 1.5;
     display: flex;
     align-items: center;
     justify-content: center;
     color: ${({ theme }) => theme.textColor.gray};
     margin: 0px auto 30px;
     max-width: 450px;
+  }
+
+  ${({ theme }) => theme.breakpoint.md} {
+    .title {
+      ${({ theme }) => theme.fontSize['title-main-sm']};
+    }
+
+    .subtitle {
+      ${({ theme }) => theme.fontSize['subtitle-sm']};
+    }
   }
 `;
 

@@ -7,6 +7,7 @@ const Container = styled.div`
   max-width: 1200px;
   margin: auto;
   padding: 130px 30px 20px 30px;
+  overflow: hidden;
 
   ${({ theme }) => theme.breakpoint.md} {
     display: flex;
@@ -24,7 +25,6 @@ const TitleContainer = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
-  /* margin-bottom: 80px; */
   margin-bottom: 70px;
 
   .title {
