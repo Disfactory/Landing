@@ -77,6 +77,6 @@ button {
 export const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
-  font-family: 'PingFang TC', Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans CJK TC', sans-serif, Helvetica, Arial;
 }
 `;
