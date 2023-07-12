@@ -271,6 +271,7 @@ const Canvas = (props) => {
     }
 
     function handleTouchMove(e) {
+      e.preventDefault();
       if (!isDrawing) {
         return;
       }
@@ -299,6 +300,7 @@ const Canvas = (props) => {
     }
 
     function handleTouchUp(e) {
+      e.preventDefault();
       isDrawing = false;
     }
   });

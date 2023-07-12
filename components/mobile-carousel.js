@@ -16,6 +16,7 @@ import 'swiper/css/navigation';
 
 const Container = styled.div`
   display: block;
+  font-family: 'Noto Sans CJK TC', sans-serif !important;
 
   ${({ theme }) => theme.breakpoint.sm} {
     display: none;
