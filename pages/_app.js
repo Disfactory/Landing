@@ -1,8 +1,7 @@
 import React from 'react';
 import CustomHead from '~/components/custom-head';
-import { Roboto, Noto_Sans_TC, Raleway } from '@next/font/google';
+import { Roboto, Noto_Sans_TC } from '@next/font/google';
 
-const raleway = Raleway({ subsets: ['latin'] });
 const roboto = Roboto({
   weight: ['100'], //variable font 不會有weight
   style: ['normal', 'italic'],
@@ -22,7 +21,6 @@ function MyApp({ Component, pageProps }) {
       <style jsx global>{`
         //can use in single page in styled component
         :root {
-          --raleway-font: ${raleway.style.fontFamily};
           --roboto-font: ${roboto.style.fontFamily};
           --notosansTC-font: ${notosansTC.style.fontFamily};
         }
