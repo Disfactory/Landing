@@ -31,32 +31,16 @@ const ContentContainer = styled.div`
     font-family: var(--raleway-font);
   }
 
-  .scratch-canvas {
+  /* .scratch-canvas {
     display: none;
 
     ${({ theme }) => theme.breakpoint.md} {
       display: block;
     }
-  }
+  } */
 `;
 
 export default function Main() {
-  // const [data, setData] = useState('');
-  // const fetchData = async () => {
-  //   const response = await axios(
-  //     'https://about.disfactory.tw/api/statistics/total'
-  //     // '/api/statistics/total' //好奇這個在dev階段要怎麼測XD
-  //   );
-
-  //   setData(response?.data);
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // console.log('data', data);
-
   return (
     <Fragment>
       <Nav />

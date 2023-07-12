@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { ImageSrc, BrushSrc } from '~/constants/canvas';
+import { ImageSrc, BrushSrc, ImageSrc2 } from '~/constants/canvas';
 import useViewport from '~/hooks/useViewport.js';
 
 // ref: https://stackoverflow.com/questions/72596200/canvas-tsx-object-is-possibly-null-and-property-getcontext-does-not-exist
@@ -9,13 +9,8 @@ import useViewport from '~/hooks/useViewport.js';
 
 //ref3: https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
 
-// const HEIGHT = 336;
-// const WIDTH = 776;
-
 const Container = styled.div`
-  ${({ theme }) => theme.breakpoint.xl} {
-    padding: 60px 0px 90px 0px;
-  }
+  padding: 60px 0px 90px 0px;
 `;
 
 const Button = styled.button`
@@ -114,13 +109,6 @@ const Canvas = (props) => {
 
   let isDrawing, lastPoint;
 
-  // const draw = (ctx) => {
-  //   ctx.fillStyle = '#000000';
-  //   ctx.beginPath();
-  //   ctx.arc(50, 100, 20, 0, 2 * Math.PI);
-  //   ctx.fill();
-  // };
-
   const { isWidtherThanSm, isWidtherThanMd } = useViewport();
 
   useEffect(() => {
@@ -135,22 +123,7 @@ const Canvas = (props) => {
     let image = new Image();
     let brush = new Image();
 
-    // console.log('image', image); // <img src="">
-
-    //Our first draw
-    // context.fillStyle = '#515151';
-    // context.fillRect(0, 0, context.canvas.width, context.canvas.height);
-
-    //   // @ts-ignore
-    //   canvas.addEventListener('mousemove', (e) => {
-    //     const x = e.offsetX;
-    //     const y = e.offsetY;
-    //     context.globalCompositeOperation = 'destination-out';
-    //     context.arc(x, y, 10, 0, 360, false);
-    //     context.fill();
-    //   });
-    // }, []);
-    image.src = ImageSrc;
+    image.src = '/images/scratch-cover.png';
     image.onload = function () {
       context.drawImage(image, 0, 0);
     };
@@ -164,15 +137,15 @@ const Canvas = (props) => {
     canvas.addEventListener('mouseup', handleMouseUp, false);
     canvas.addEventListener('touchend', handleMouseUp, false);
     button.addEventListener('click', reDraw, false);
+    canvas.addEventListener('touchstart', handleTouchDown, false);
+    canvas.addEventListener('touchmove', handleTouchMove, false);
+    canvas.addEventListener('touchend', handleTouchUp, false);
 
     function reDraw() {
-      console.log('有執行redraw');
       context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-      // image.onclick = function () {
-      //   context.drawImage(image, 0, 0);
-      // };
+
       let image = new Image();
-      image.src = ImageSrc;
+      image.src = '/images/scratch-cover.png';
       context.fillStyle = 'red';
       image.onload = function () {
         context.drawImage(image, 0, 0);
@@ -236,6 +209,25 @@ const Canvas = (props) => {
       return { x: mx, y: my };
     }
 
+    function getTouch(e, canvas) {
+      var offsetX = 0,
+        offsetY = 0,
+        mx,
+        my;
+
+      if (canvas.offsetParent !== undefined) {
+        do {
+          offsetX += canvas.offsetLeft;
+          offsetY += canvas.offsetTop;
+        } while ((canvas = canvas.offsetParent));
+      }
+
+      mx = e.touches[0].clientX - offsetX;
+      my = e.touches[0].clientY - offsetY;
+
+      return { x: mx, y: my };
+    }
+
     function handlePercentage(filledInPixels) {
       filledInPixels = filledInPixels || 0;
       if (filledInPixels > 80 && canvas !== null) {
@@ -247,6 +239,11 @@ const Canvas = (props) => {
     function handleMouseDown(e) {
       isDrawing = true;
       lastPoint = getMouse(e, canvas);
+    }
+
+    function handleTouchDown(e) {
+      isDrawing = true;
+      lastPoint = getTouch(e, canvas);
     }
 
     function handleMouseMove(e) {
@@ -273,7 +270,35 @@ const Canvas = (props) => {
       handlePercentage(getFilledInPixels(32));
     }
 
+    function handleTouchMove(e) {
+      if (!isDrawing) {
+        return;
+      }
+
+      e.preventDefault();
+
+      var currentPoint = getTouch(e, canvas),
+        dist = distanceBetween(lastPoint, currentPoint),
+        angle = angleBetween(lastPoint, currentPoint),
+        x,
+        y;
+
+      for (var i = 0; i < dist; i++) {
+        x = lastPoint.x + Math.sin(angle) * i - 25;
+        y = lastPoint.y + Math.cos(angle) * i - 25;
+        context.globalCompositeOperation = 'destination-out';
+        context.drawImage(brush, x, y);
+      }
+
+      lastPoint = currentPoint;
+      handlePercentage(getFilledInPixels(32));
+    }
+
     function handleMouseUp(e) {
+      isDrawing = false;
+    }
+
+    function handleTouchUp(e) {
       isDrawing = false;
     }
   });
