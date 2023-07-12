@@ -17,7 +17,7 @@ import 'swiper/css/navigation';
 const Container = styled.div`
   display: block;
 
-  ${({ theme }) => theme.breakpoint.md} {
+  ${({ theme }) => theme.breakpoint.sm} {
     display: none;
   }
 `;
