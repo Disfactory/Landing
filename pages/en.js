@@ -196,7 +196,7 @@ ul ul {
 
         <ul>
           <li>
-            Email: <a href='mailto:hi@disfactory.tw'>hi@disfactory.tw</a>
+            Email: <a href='mailto:cet@cet-taiwan.org'>cet@cet-taiwan.org</a>
           </li>
 
           <li>
