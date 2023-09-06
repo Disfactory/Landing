@@ -104,9 +104,6 @@ export default function Main() {
         <SectionBody title={'加入我們！'}>
           <Canvas />
         </SectionBody>
-        {/* <div className='scratch-canvas'>
-          <Canvas />
-        </div> */}
       </ContentContainer>
       <Footer />
     </Fragment>
