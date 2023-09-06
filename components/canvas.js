@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { ImageSrc, BrushSrc, ImageSrc2 } from '~/constants/canvas';
+import { BrushSrc } from '~/constants/canvas';
 import useViewport from '~/hooks/useViewport.js';
+import cursorImage from '../public/images/coin.ico';
 
 // ref: https://stackoverflow.com/questions/72596200/canvas-tsx-object-is-possibly-null-and-property-getcontext-does-not-exist
 
@@ -10,36 +11,36 @@ import useViewport from '~/hooks/useViewport.js';
 //ref3: https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
 
 const Container = styled.div`
-  padding: 60px 0px 90px 0px;
+  /* padding: 60px 0px 90px 0px; */
 `;
 
-const Button = styled.button`
-  max-width: 409px;
-  width: 80%;
-  height: 60px;
-  background: #eaf3bf;
-  border-radius: 19px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 32px;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.15);
-  ${({ theme }) => theme.fontSize['normal']};
+// const Button = styled.button`
+//   max-width: 409px;
+//   width: 80%;
+//   height: 60px;
+//   background: #eaf3bf;
+//   border-radius: 19px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin: auto;
+//   margin-bottom: 32px;
+//   cursor: pointer;
+//   user-select: none;
+//   -webkit-user-select: none;
+//   touch-action: manipulation;
+//   box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.15);
+//   ${({ theme }) => theme.fontSize['normal']};
 
-  &:hover {
-    transition: 0.3s;
-  }
+//   &:hover {
+//     transition: 0.3s;
+//   }
 
-  &:active {
-    box-shadow: #422800 3px 3px 0 0;
-    transform: translate(4px, 4px);
-  }
-`;
+//   &:active {
+//     box-shadow: #422800 3px 3px 0 0;
+//     transform: translate(4px, 4px);
+//   }
+// `;
 
 const Content = styled.div`
   width: 300px;
@@ -57,16 +58,24 @@ const Content = styled.div`
   }
 
   .scratch-back {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: scroll;
+    height: 336px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 15px 0px 25px;
+
+    img {
+      width: 90%;
+      display: block;
+      margin: auto;
+    }
   }
 
   #canvas {
     position: absolute;
     top: 0;
+    left: 0;
     //TODO: 想改滑鼠鼠標圖樣！
-    cursor: 'url(../public/images/coin.ico), auto';
+    /* cursor: url(${cursorImage}); */
   }
 `;
 
@@ -105,7 +114,7 @@ const Canvas = (props) => {
   const [width, setWidth] = useState(320);
   const [height, setHeight] = useState(336);
   const canvasRef = useRef(null);
-  const buttonRef = useRef(null);
+  // const buttonRef = useRef(null);
 
   let isDrawing, lastPoint;
 
@@ -113,9 +122,9 @@ const Canvas = (props) => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const button = buttonRef.current;
+    // const button = buttonRef.current;
     if (canvas == null) return; // current may be null
-    if (button == null) return;
+    // if (button == null) return;
 
     const context = canvas.getContext('2d');
     if (context == null) return; // context may be null
@@ -136,7 +145,7 @@ const Canvas = (props) => {
     canvas.addEventListener('touchmove', handleMouseMove, false);
     canvas.addEventListener('mouseup', handleMouseUp, false);
     canvas.addEventListener('touchend', handleMouseUp, false);
-    button.addEventListener('click', reDraw, false);
+    // button.addEventListener('click', reDraw, false);
     canvas.addEventListener('touchstart', handleTouchDown, false);
     canvas.addEventListener('touchmove', handleTouchMove, false);
     canvas.addEventListener('touchend', handleTouchUp, false);
@@ -230,7 +239,7 @@ const Canvas = (props) => {
 
     function handlePercentage(filledInPixels) {
       filledInPixels = filledInPixels || 0;
-      if (filledInPixels > 80 && canvas !== null) {
+      if (filledInPixels > 50 && canvas !== null) {
         canvas?.parentNode?.removeChild(canvas);
         if (canvas === null) return;
       }
@@ -307,11 +316,11 @@ const Canvas = (props) => {
 
   return (
     <Container>
-      <Button ref={buttonRef}>想來玩嗎？點我！</Button>
+      {/* <Button ref={buttonRef}>加入我們！</Button> */}
 
       <Content>
         <div className='scratch-back'>
-          <img src='/images/scratch_LOGO.svg'></img>
+          <img src='/images/collaborator.png'></img>
         </div>
         {!isWidtherThanSm && (
           <canvas ref={canvasRef} id='canvas' width={300} height={height} />

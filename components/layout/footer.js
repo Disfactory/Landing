@@ -4,7 +4,7 @@ import Contributor from '~/components/contributor';
 
 const ContactInfo = styled.div`
   width: 100%;
-  padding: 15px 0px;
+  padding: 70px 0px 30px;
   text-align: center;
   line-height: 1.8rem;
 

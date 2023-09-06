@@ -93,13 +93,20 @@ export default function Main() {
         </SectionBody>
 
         <span id='news'></span>
-        <SectionBody title={'想深入農地工廠議題，或瀏覽專案相關報導嗎？'}>
+        <SectionBody
+          title={'了解更多'}
+          subtitle={'想深入農地工廠議題，或瀏覽專案相關報導嗎？'}
+        >
           <MobileCarousel data={NewsShare} type='news' />
           <Carousel data={NewsShare} type='news' />
         </SectionBody>
-        <div className='scratch-canvas'>
+
+        <SectionBody title={'加入我們！'}>
           <Canvas />
-        </div>
+        </SectionBody>
+        {/* <div className='scratch-canvas'>
+          <Canvas />
+        </div> */}
       </ContentContainer>
       <Footer />
     </Fragment>
