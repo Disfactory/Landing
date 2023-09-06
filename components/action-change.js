@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import CountUp from 'react-countup';
+import Aos from 'aos';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const ListContainer = styled.div`
   width: 90%;
@@ -68,10 +71,6 @@ const ActionList = styled.div`
     letter-spacing: 0.855px;
     color: #333333;
   }
-
-  /* ${({ theme }) => theme.breakpoint.md} {
-    margin: 0px 20px;
-  } */
 `;
 
 export default function ActionChange() {
@@ -88,6 +87,10 @@ export default function ActionChange() {
       });
   }, []);
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
     <ListContainer>
       {isLoading ? (
@@ -96,17 +99,66 @@ export default function ActionChange() {
         <ListWrap>
           <ActionList>
             <img src='/images/action1.svg' alt=''></img>
-            {data && <h2 className='amount'>{data.report_records}</h2>}
+            {data && (
+              <h2 className='amount'>
+                <CountUp
+                  className='content'
+                  end={data.report_records}
+                  duration={3}
+                  decimal=','
+                  redraw={true}
+                >
+                  {({ countUpRef, start }) => (
+                    <VisibilitySensor onChange={start} delayedCall>
+                      <span ref={countUpRef} />
+                    </VisibilitySensor>
+                  )}
+                </CountUp>
+              </h2>
+            )}
             <p className='notion'>累積回報人次</p>
           </ActionList>
           <ActionList>
             <img src='/images/action2.svg' alt=''></img>
-            {data && <h2 className='amount'>{data.documents}</h2>}
+            {data && (
+              <h2 className='amount'>
+                <CountUp
+                  className='content'
+                  end={data.documents}
+                  duration={3}
+                  decimal=','
+                  redraw={true}
+                >
+                  {({ countUpRef, start }) => (
+                    <VisibilitySensor onChange={start} delayedCall>
+                      <span ref={countUpRef} />
+                    </VisibilitySensor>
+                  )}
+                </CountUp>
+              </h2>
+            )}
             <p className='notion'>累積申訴公文</p>
           </ActionList>
           <ActionList>
             <img src='/images/action3.svg' alt=''></img>
-            {data && <h2 className='amount'>{data.factories}</h2>}
+            {data && (
+              <h2 className='amount'>
+                {' '}
+                <CountUp
+                  className='content'
+                  end={data.factories}
+                  duration={3}
+                  decimal=','
+                  redraw={true}
+                >
+                  {({ countUpRef, start }) => (
+                    <VisibilitySensor onChange={start} delayedCall>
+                      <span ref={countUpRef} />
+                    </VisibilitySensor>
+                  )}
+                </CountUp>
+              </h2>
+            )}
             <p className='notion'>間被裁罰工廠</p>
           </ActionList>
         </ListWrap>
