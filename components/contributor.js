@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import { ContributorInfo } from '~/constants/contributor';
 
-const Test = styled.div`
+const Background = styled.div`
   .invisible {
     opacity: 0;
     z-index: -1;
@@ -151,7 +151,7 @@ const lists = ContributorInfo.map((item) => {
 
 export default function Contributor({ visible, setVisible }) {
   return (
-    <Test>
+    <Background>
       <Container className={visible}>
         <Content>
           <div
@@ -180,6 +180,6 @@ export default function Contributor({ visible, setVisible }) {
           </ScrollBar>
         </Content>
       </Container>
-    </Test>
+    </Background>
   );
 }

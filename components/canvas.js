@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { BrushSrc } from '~/constants/canvas';
 import useViewport from '~/hooks/useViewport.js';
-import cursorImage from '../public/images/coin.ico';
 
 // ref: https://stackoverflow.com/questions/72596200/canvas-tsx-object-is-possibly-null-and-property-getcontext-does-not-exist
 
@@ -10,9 +9,7 @@ import cursorImage from '../public/images/coin.ico';
 
 //ref3: https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
 
-const Container = styled.div`
-  /* padding: 60px 0px 90px 0px; */
-`;
+const Container = styled.div``;
 
 // const Button = styled.button`
 //   max-width: 409px;
@@ -75,7 +72,7 @@ const Content = styled.div`
     top: 0;
     left: 0;
     //TODO: 想改滑鼠鼠標圖樣！
-    /* cursor: url(${cursorImage}); */
+    /* cursor: url(${'../public/images/coin.ico'}); */
   }
 `;
 
