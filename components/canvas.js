@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { ImageSrc, BrushSrc, ImageSrc2 } from '~/constants/canvas';
+import { BrushSrc } from '~/constants/canvas';
 import useViewport from '~/hooks/useViewport.js';
 
 // ref: https://stackoverflow.com/questions/72596200/canvas-tsx-object-is-possibly-null-and-property-getcontext-does-not-exist
@@ -57,9 +57,16 @@ const Content = styled.div`
   }
 
   .scratch-back {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: scroll;
+    height: 336px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 15px 0px 25px;
+
+    img {
+      width: 90%;
+      display: block;
+      margin: auto;
+    }
   }
 
   #canvas {
@@ -230,7 +237,7 @@ const Canvas = (props) => {
 
     function handlePercentage(filledInPixels) {
       filledInPixels = filledInPixels || 0;
-      if (filledInPixels > 80 && canvas !== null) {
+      if (filledInPixels > 50 && canvas !== null) {
         canvas?.parentNode?.removeChild(canvas);
         if (canvas === null) return;
       }
@@ -311,7 +318,7 @@ const Canvas = (props) => {
 
       <Content>
         <div className='scratch-back'>
-          <img src='/images/scratch_LOGO.svg'></img>
+          <img src='/images/collaborator.png'></img>
         </div>
         {!isWidtherThanSm && (
           <canvas ref={canvasRef} id='canvas' width={300} height={height} />
