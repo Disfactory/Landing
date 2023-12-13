@@ -2,7 +2,7 @@ const ContributorInfo = [
   {
     id: 'frontend',
     type: '前端',
-    name: 'IU、yukai、yeefun、dotsea、Caleb、二路、KuoMin',
+    name: 'IU、yukai、yeefun、dotsea、Caleb、二路、KuoMin、richard',
   },
   {
     id: 'design',
@@ -12,7 +12,7 @@ const ContributorInfo = [
   {
     id: 'backend',
     type: '後端',
-    name: 'cph、yellowsoar、swind、小白、YAlgorithm、sour、Jsaon、Toby、 Sonia、Andy、Hubert、Darren、Looofy、Simon、Aaron、steven、ifengc、kai wang、tuo',
+    name: 'cph、yellowsoar、swind、小白、YAlgorithm、sour、Jsaon、Toby、 Sonia、Andy、Hubert、Darren、Looofy、Simon、Aaron、steven、ifengc、kai wang、tuo、貝吉樂',
   },
   {
     id: 'gis',
